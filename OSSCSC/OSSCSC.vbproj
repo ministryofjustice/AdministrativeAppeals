@@ -6054,12 +6054,6 @@
     <Content Include="Templates\template4.dwt" />
     <Content Include="Templates\template5.dwt" />
     <Content Include="Templates\template_R.dwt" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Aspx\Default.aspx.resx">
