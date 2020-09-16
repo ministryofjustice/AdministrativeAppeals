@@ -1,0 +1,32 @@
+
+<div id="logo">
+  <a href="../index.htm" accesskey="1"><img src="../Images/osscspacLogo.gif" alt="Office of Social Security, Child Support &amp; Pensions Appeal Commissioners" width="254" height="56" /></a></div>
+
+<div id="topnav">
+	<ul>
+		<li><a href="http://www.tribunals.gov.uk/" title="Tribunals Service" accesskey="J">Tribunals Service</a> |</li>
+		<li><a href="mailto:%54%53%2E%57%65%62%6D%61%73%74%65%72%40%74%72%69%62%75%6E%61%6C%73%2E%67%73%69%2E%67%6F%76%2E%75%6B?subject=Feedback" title="Feedback" accesskey="k">Feedback</a> |</li>
+		<li><a href="../GenericPages/search.htm" title="Search" accesskey="9">Search</a> |</li>
+		<li><a href="../GenericPages/contactUs.htm" title="Contact us" accesskey="C">Contact us</a></li> 
+	</ul>
+	<br />
+	<ul>
+		<li><a href="../GenericPages/plainEnglishCampaign.htm" title="Committed to clearer communication" accesskey="8">Committed to clearer communication</a></li>
+	</ul>
+	<br />
+	<ul>
+		<li class="date"><script type="text/javascript" src="../Javascript/getdate.txt"></script></li>
+	</ul>
+</div>
+
+<div id="mainnav">
+	<ul>
+		<li class="mainnav"><a href="../AboutUs/aboutUs.htm" title="About us" accesskey="N" class="link1">About us</a></li>
+		<li class="mainnav"><a href="../Decisions/decisions.htm" title="Decisions" accesskey="R" class="link2">Decisions</a></li> 
+		<li class="mainnav"><a href="../FormsGuidance/howToAppeal.htm" title="Forms &amp; Guidance" accesskey="I" class="link3">Forms &amp; Guidance</a></li>
+		<li class="mainnav"><a href="../RulesLegislation/rulesLegislation.htm" title="Rules &amp; Legislation" accesskey="P" class="link4">Rules &amp; Legislation</a></li> 
+		<!--<li class="mainnav"><a href="../CaseLaw/caseLaw.htm" title="Case law" accesskey="6" class="link5">Case law</a></li>-->
+		<li class="mainnav"><a href="../Publications/publications.htm" title="Publications" accesskey="7" class="link5">Publications</a> </li>
+	  <li class="mainnav"><a href="../GenericPages/usefulLinks.htm" title="Useful links" accesskey="l" class="link6">Useful links</a></li>
+	</ul>
+</div> 

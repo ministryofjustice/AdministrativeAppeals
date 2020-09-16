@@ -1,0 +1,17 @@
+var d=new Date()
+
+var weekday=new Array
+("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+var monthname=new Array
+("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+var date = d.getDate()
+if (date == 1 || date == 21 || date == 31) {ender = "<sup></sup>"}
+else
+if (date == 2 || date == 22) {ender = "<sup></sup>"}
+else
+if (date == 3 || date == 23) {ender = "<sup></sup>"}
+else {ender = "<sup></sup>"}
+
+document.write(weekday[d.getDay()]+ " " +d.getDate()+ender+ " " +monthname[d.getMonth()]+ " " +d.getFullYear())
