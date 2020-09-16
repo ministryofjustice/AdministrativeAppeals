@@ -1,4 +1,4 @@
-Namespace DCA.TribunalsService.Ossc.Entity
+Namespace Entity
     Public Class SearchCriteria
         ' Properties
         Public Property Respondent As String

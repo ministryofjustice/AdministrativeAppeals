@@ -1,12 +1,10 @@
-Imports System.Data
 Imports System.Data.SqlClient
 Imports Reeb.SqlOM
 Imports Reeb.SqlOM.Render
 Imports Microsoft.ApplicationBlocks.Data
-Imports DCA.TribunalsService.Ossc.Entity
-Imports DCA.TribunalsService.Ossc.Entity.DCA.TribunalsService.Ossc.Entity
+Imports OSSCSC.Entity.Entity
 
-Namespace DCA.TribunalsService.Ossc.Data
+Namespace Data
     Public Class DecisionData
 
         Public Function GetDecision(ByVal id As Integer) As DataSet

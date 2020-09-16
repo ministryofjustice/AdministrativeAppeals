@@ -326,7 +326,6 @@
     <Content Include="UserControls\zFooter.ascx" />
     <Content Include="UserControls\zHeader.ascx" />
     <Content Include="Web.config" />
-    <Content Include="zNEWstyles.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\Login.aspx.designer.vb">

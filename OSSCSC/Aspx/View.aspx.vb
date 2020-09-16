@@ -1,5 +1,5 @@
-﻿Imports DCA.TribunalsService.Ossc.Business.DCA.TribunalsService.Ossc.Business
-Imports Microsoft.VisualBasic.CompilerServices
+﻿Imports Microsoft.VisualBasic.CompilerServices
+Imports OSSCSC.Business.Business
 Imports System.IO
 
 Namespace DCA.TribunalsService.Ossc.Web

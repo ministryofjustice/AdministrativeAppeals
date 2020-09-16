@@ -13,7 +13,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>DCA.TribunalsService.Ossc.Business</AssemblyName>
+    <AssemblyName>OSSCSC.Business</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -24,7 +24,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionExplicit>On</OptionExplicit>
     <OptionStrict>Off</OptionStrict>
-    <RootNamespace>DCA.TribunalsService.Ossc.Business</RootNamespace>
+    <RootNamespace>OSSCSC.Business</RootNamespace>
     <StartupObject>DCA.TribunalsService.Ossc.Business.%28None%29</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -35,7 +35,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>DCA.TribunalsService.Ossc.Business.xml</DocumentationFile>
+    <DocumentationFile>OSSCSC.Business.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
     <DefineConstants />
@@ -52,7 +52,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>DCA.TribunalsService.Ossc.Business.xml</DocumentationFile>
+    <DocumentationFile>OSSCSC.Business.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
     <DefineConstants />

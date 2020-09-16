@@ -1,4 +1,4 @@
-Namespace DCA.TribunalsService.Ossc.Entity
+Namespace Entity
     Public Class DecisionEntity
 
         Private _Claimants As System.String = ""

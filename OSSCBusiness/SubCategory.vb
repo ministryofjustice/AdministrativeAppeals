@@ -1,9 +1,7 @@
-Imports DCA.TribunalsService.Ossc.Data
 Imports System.Text
-Imports System
-Imports DCA.TribunalsService.Ossc.Data.DCA.TribunalsService.Ossc.Data
+Imports OSSCSC.Data.Data
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class SubCategory
 
         Private Function GetList() As DataSet

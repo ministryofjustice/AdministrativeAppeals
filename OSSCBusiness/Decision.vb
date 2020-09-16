@@ -1,9 +1,7 @@
-Imports DCA.TribunalsService.Ossc.Data
-Imports DCA.TribunalsService.Ossc.Data.DCA.TribunalsService.Ossc.Data
-Imports DCA.TribunalsService.Ossc.Entity
-Imports DCA.TribunalsService.Ossc.Entity.DCA.TribunalsService.Ossc.Entity
+Imports OSSCSC.Data.Data
+Imports OSSCSC.Entity.Entity
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class Decision
 
         Public Function SearchPaged(ByVal criteria As SearchCriteria, ByVal page As Integer,

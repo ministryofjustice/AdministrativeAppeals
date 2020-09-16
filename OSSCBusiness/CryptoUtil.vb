@@ -1,10 +1,8 @@
-Imports System.Diagnostics
 Imports System.Security.Cryptography
-Imports System.Text
 Imports System.IO
 
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class CryptoUtil
 
         '8 bytes randomly selected for both the Key and the Initialization Vector

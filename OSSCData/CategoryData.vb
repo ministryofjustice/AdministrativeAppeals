@@ -1,9 +1,8 @@
-Imports System.Data
 Imports System.Data.SqlClient
 Imports Microsoft.ApplicationBlocks.Data
 Imports System.Web
 
-Namespace DCA.TribunalsService.Ossc.Data
+Namespace Data
     Public Class CategoryData
 
         Public Function GetCategoryList() As DataSet

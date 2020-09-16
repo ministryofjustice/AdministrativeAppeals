@@ -1,6 +1,6 @@
 Imports System.Configuration
 
-Namespace DCA.TribunalsService.Ossc.Data
+Namespace Data
     Public Class Configuration
 
         Public Shared Function SqlConnectionString() As String

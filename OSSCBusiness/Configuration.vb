@@ -1,7 +1,6 @@
-Imports System
 Imports System.Configuration
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class Configuration
 
         '/ <summary>

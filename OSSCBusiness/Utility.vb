@@ -2,7 +2,7 @@ Imports System.Text.RegularExpressions
 Imports System.Web.UI.WebControls
 Imports System.Text
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class Utility
 
         '/ <summary>

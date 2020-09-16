@@ -1,7 +1,6 @@
-Imports DCA.TribunalsService.Ossc.Data
-Imports DCA.TribunalsService.Ossc.Data.DCA.TribunalsService.Ossc.Data
+Imports OSSCSC.Data.Data
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class Commissioner
 
         Public Function GetCommissionerList() As DataSet

@@ -1,9 +1,7 @@
-Imports System
-Imports System.Data
 Imports System.Data.SqlClient
 Imports Microsoft.ApplicationBlocks.Data
 
-Namespace DCA.TribunalsService.Ossc.Data
+Namespace Data
     Public Class SecurityData
 
         Public Function AuthenticateUser(ByVal Username As String, ByVal Password As String) As DataSet

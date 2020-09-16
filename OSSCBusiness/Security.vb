@@ -1,7 +1,6 @@
-Imports DCA.TribunalsService.Ossc.Data
-Imports DCA.TribunalsService.Ossc.Data.DCA.TribunalsService.Ossc.Data
+Imports OSSCSC.Data.Data
 
-Namespace DCA.TribunalsService.Ossc.Business
+Namespace Business
     Public Class Security
 
         Public Function AuthenticateUser(ByVal Username As String, ByVal Password As String) As Boolean

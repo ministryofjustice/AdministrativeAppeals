@@ -13,7 +13,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>DCA.TribunalsService.Ossc.Entity</AssemblyName>
+    <AssemblyName>OSSCSC.Entity</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -24,7 +24,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionExplicit>On</OptionExplicit>
     <OptionStrict>Off</OptionStrict>
-    <RootNamespace>DCA.TribunalsService.Ossc.Entity</RootNamespace>
+    <RootNamespace>OSSCSC.Entity</RootNamespace>
     <StartupObject>DCA.TribunalsService.Ossc.Entity.%28None%29</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -35,7 +35,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>DCA.TribunalsService.Ossc.Entity.xml</DocumentationFile>
+    <DocumentationFile>OSSCSC.Entity.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
     <DefineConstants />
@@ -52,7 +52,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>DCA.TribunalsService.Ossc.Entity.xml</DocumentationFile>
+    <DocumentationFile>OSSCSC.Entity.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
     <DefineConstants />

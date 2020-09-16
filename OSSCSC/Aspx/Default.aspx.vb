@@ -1,6 +1,6 @@
-Imports DCA.TribunalsService.Ossc.Business.DCA.TribunalsService.Ossc.Business
-Imports DCA.TribunalsService.Ossc.Entity.DCA.TribunalsService.Ossc.Entity
 Imports Microsoft.VisualBasic.CompilerServices
+Imports OSSCSC.Business.Business
+Imports OSSCSC.Entity.Entity
 
 Namespace DCA.TribunalsService.Ossc.Web
     Public Class Search

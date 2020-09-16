@@ -1,10 +1,8 @@
-Imports System.Data
 Imports System.Data.SqlClient
 Imports Microsoft.ApplicationBlocks.Data
-Imports DCA.TribunalsService.Ossc.Entity
 Imports System.Web
 
-Namespace DCA.TribunalsService.Ossc.Data
+Namespace Data
     Public Class CommissionerData
 
         Public Function GetCommissionerList() As DataSet
