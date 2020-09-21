@@ -328,6 +328,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Commissioners.aspx.designer.vb">
+      <DependentUpon>Commissioners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Commissioners.aspx.vb">
+      <DependentUpon>Commissioners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Admin\Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
@@ -340,6 +347,13 @@
     </Compile>
     <Compile Include="Admin\Edit.aspx.vb">
       <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditUsers.aspx.designer.vb">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditUsers.aspx.vb">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Login.aspx.designer.vb">

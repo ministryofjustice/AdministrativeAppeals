@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Commissioners.aspx.vb" Inherits="DCA.TribunalsService.Ossc.Web.Commissioners"%>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Commissioners.aspx.vb" Inherits="OSSCSC.Web.Commissioners"%>
 <%@ Register TagPrefix="uc1" TagName="AdminNav" Src="../UserControls/AdminNav.ascx" %>
 <%@ Register TagPrefix="trans" Namespace="DCA.TribunalsService.Web.UI.Controls" Assembly="DCA.TribunalsService.Web.UI.Controls" %>
 <h1>Commissioner Management</h1>

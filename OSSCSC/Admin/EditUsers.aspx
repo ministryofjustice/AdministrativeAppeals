@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="EditUsers.aspx.vb" Inherits="DCA.TribunalsService.Ossc.Web.EditUsers"%>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="EditUsers.aspx.vb" Inherits="OSSCSC.Web.EditUsers"%>
 <%@ Register TagPrefix="uc1" TagName="AdminNav" Src="../UserControls/AdminNav.ascx" %>
 <script language="javascript">
 
