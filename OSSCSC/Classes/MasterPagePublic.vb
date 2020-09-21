@@ -3,7 +3,7 @@ Imports System
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     Public Class MasterPagePublic
         Inherits Page
         ' Methods

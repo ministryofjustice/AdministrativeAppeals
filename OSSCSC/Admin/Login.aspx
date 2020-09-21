@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Login.aspx.vb" Inherits="OSSCSC.DCA.TribunalsService.Ossc.Web.Login" %>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Login.aspx.vb" Inherits="OSSCSC.Web.Login" %>
 
 
 

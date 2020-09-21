@@ -10,7 +10,7 @@
 Option Strict On
 Option Explicit On
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
 
     Partial Public Class Links
     End Class

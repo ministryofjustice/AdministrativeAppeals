@@ -1,4 +1,4 @@
-<%@ Control Language="vb" AutoEventWireup="false" Codebehind="Links.ascx.vb" Inherits="OSSCSC.DCA.TribunalsService.Ossc.Web.Links" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="Links.ascx.vb" Inherits="OSSCSC.Web.Links" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="trans" Namespace="DCA.TribunalsService.Web.UI.Controls" Assembly="DCA.TribunalsService.Web.UI.Controls" %>
 
 <!--

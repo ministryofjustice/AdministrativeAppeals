@@ -1,4 +1,4 @@
-﻿Namespace DCA.TribunalsService.Ossc.Web
+﻿Namespace Web
     Public Class PageUtility
         ' Methods
         Public Shared Sub SetFocus(ByVal ctrl As Control)

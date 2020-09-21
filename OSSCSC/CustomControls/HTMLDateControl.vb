@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.CompilerServices
 Imports System.ComponentModel
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     <ValidationProperty("Text"), ParseChildren(False), DefaultEvent("TextChanged")>
     Public Class HtmlDateControl
         Inherits TextBox

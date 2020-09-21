@@ -10,7 +10,7 @@
 Option Strict On
 Option Explicit On
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
 
     Partial Public Class View
 
@@ -21,7 +21,7 @@ Namespace DCA.TribunalsService.Ossc.Web
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents Header1 As Global.OSSCSC.DCA.TribunalsService.Ossc.Web.Header
+        Protected WithEvents Header1 As Global.OSSCSC.Web.Header
 
         '''<summary>
         '''form1 control.
@@ -174,6 +174,6 @@ Namespace DCA.TribunalsService.Ossc.Web
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents Footer1 As Global.OSSCSC.DCA.TribunalsService.Ossc.Web.Footer
+        Protected WithEvents Footer1 As Global.OSSCSC.Web.Footer
     End Class
 End Namespace

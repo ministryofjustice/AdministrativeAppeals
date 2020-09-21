@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="View.aspx.vb" Inherits="OSSCSC.DCA.TribunalsService.Ossc.Web.View" %>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="View.aspx.vb" Inherits="OSSCSC.Web.View" %>
 <%@ Register TagPrefix="uc1" TagName="Header" Src="../UserControls/Header.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="Footer" Src="../UserControls/Footer.ascx" %>
 <style type="text/css">

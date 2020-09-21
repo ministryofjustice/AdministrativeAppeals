@@ -2,7 +2,7 @@
 Imports OSSCSC.Business.Business
 Imports System.IO
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     Partial Class View
         Inherits MasterPagePublic
         ' Methods

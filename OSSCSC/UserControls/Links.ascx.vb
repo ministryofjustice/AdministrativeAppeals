@@ -3,7 +3,7 @@ Imports System
 Imports System.Diagnostics
 Imports System.Web.UI
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     Partial Class Links
         Inherits UserControl
         ' Methods

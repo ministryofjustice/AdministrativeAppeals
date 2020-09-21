@@ -1,7 +1,7 @@
-<%@ Page Language="vb" AutoEventWireup="false" codebehind="Default.aspx.vb" Inherits="OSSCSC.DCA.TribunalsService.Ossc.Web.Search" EnableEventValidation="false" %>
+<%@ Page Language="vb" AutoEventWireup="false" codebehind="Default.aspx.vb" Inherits="OSSCSC.Web.Search" EnableEventValidation="false" %>
 <%@ Register TagPrefix="uc1" TagName="Header" Src="../UserControls/Header.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="Footer" Src="../UserControls/Footer.ascx" %>
-<%@ Register TagPrefix="tt" Namespace="OSSCSC.DCA.TribunalsService.Ossc.Web" Assembly="OSSCSC" %>
+<%@ Register TagPrefix="tt" Namespace="OSSCSC.Web" Assembly="OSSCSC" %>
 <%@ Register TagPrefix="trans" Namespace="DCA.TribunalsService.Web.UI.Controls" Assembly="DCA.TribunalsService.Web.UI.Controls" %>
 <uc1:Header id="Header1" runat="server"></uc1:Header>
 <script src="../Javascript/PopulateSubcategory.js" type="text/javascript"></script>
@@ -119,7 +119,7 @@
 			<asp:BoundColumn DataField="subcategory" SortExpression="subcategory" HeaderText="Subcategory"></asp:BoundColumn>
 			<asp:TemplateColumn HeaderText="Decision Added">
 				<ItemTemplate>
-					<asp:Label id="createddate" runat="server" text='<%# DCA.TribunalsService.Ossc.Business.DCA.TribunalsService.Ossc.Business.Utility.GetDate(DataBinder.Eval(Container, "DataItem.created_datetime")) %>'>
+					<asp:Label id="createddate" runat="server" text='<%# OSSCSC.Business.Business.Utility.GetDate(DataBinder.Eval(Container, "DataItem.created_datetime")) %>'>
 					</asp:Label>
 				</ItemTemplate>
 			</asp:TemplateColumn>

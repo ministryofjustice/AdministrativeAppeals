@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.CompilerServices
 Imports OSSCSC.Business.Business
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     Partial Class Login
         Inherits MasterPage
         ' Methods

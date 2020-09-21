@@ -12,51 +12,60 @@ Option Explicit On
 
 Namespace Web
 
-    Partial Public Class Login
+    Partial Public Class AdminNav
 
         '''<summary>
-        '''form1 control.
+        '''hrefSearch control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+        Protected WithEvents hrefSearch As Global.System.Web.UI.WebControls.HyperLink
 
         '''<summary>
-        '''lblError control.
+        '''hrefCreate control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
+        Protected WithEvents hrefCreate As Global.System.Web.UI.WebControls.HyperLink
 
         '''<summary>
-        '''txtUser control.
+        '''hrefUsers control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtUser As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents hrefUsers As Global.System.Web.UI.WebControls.HyperLink
 
         '''<summary>
-        '''txtPassword control.
+        '''hrefCategories control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents hrefCategories As Global.System.Web.UI.WebControls.HyperLink
 
         '''<summary>
-        '''btnLogin control.
+        '''hrefCommissioners control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
+        Protected WithEvents hrefCommissioners As Global.System.Web.UI.WebControls.HyperLink
+
+        '''<summary>
+        '''lnkSignOut control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lnkSignOut As Global.System.Web.UI.WebControls.LinkButton
     End Class
 End Namespace

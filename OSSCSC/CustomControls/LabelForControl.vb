@@ -4,7 +4,7 @@ Imports System.ComponentModel
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     <ParseChildren(False), ValidationProperty("Text"), DefaultProperty("Text")>
     Public Class LabelForControl
         Inherits WebControl

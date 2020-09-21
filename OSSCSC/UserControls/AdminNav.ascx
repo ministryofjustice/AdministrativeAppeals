@@ -1,4 +1,4 @@
-<%@ Control Language="vb" AutoEventWireup="false" Codebehind="AdminNav.ascx.vb" Inherits="DCA.TribunalsService.Ossc.Web.AdminNav" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="AdminNav.ascx.vb" Inherits="OSSCSC.Web.AdminNav" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 
 <p>
 	[&nbsp;<asp:HyperLink id="hrefSearch" text="Search" runat="server" NavigateUrl="../Admin/Default.aspx">Search</asp:HyperLink>&nbsp;] 

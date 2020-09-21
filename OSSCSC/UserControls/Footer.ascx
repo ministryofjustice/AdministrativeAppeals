@@ -1,4 +1,4 @@
-<%@ Control Language="vb" AutoEventWireup="false" codebehind="Footer.ascx.vb" Inherits="OSSCSC.DCA.TribunalsService.Ossc.Web.Footer" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="vb" AutoEventWireup="false" codebehind="Footer.ascx.vb" Inherits="OSSCSC.Web.Footer" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 </div>
 <div id="bottomnav"> 
 <ul>  

@@ -1,18 +1,19 @@
-Imports Microsoft.VisualBasic.CompilerServices
+﻿Imports Microsoft.VisualBasic.CompilerServices
 Imports OSSCSC.Business.Business
 Imports OSSCSC.Entity.Entity
+Imports System.Drawing
 
 Namespace Web
-    Public Class Search
-        Inherits MasterPagePublic
+    Partial Class _DefaultAdmin
+        Inherits MasterPage
         ' Methods
         Public Sub New()
+            AddHandler MyBase.Init, New EventHandler(AddressOf Me.Page_Init)
             AddHandler MyBase.Load, New EventHandler(AddressOf Me.Page_Load)
             AddHandler MyBase.PreRender, New EventHandler(AddressOf Me.Page_PreRender)
-            AddHandler MyBase.Init, New EventHandler(AddressOf Me.Page_Init)
         End Sub
 
-        Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSearch.Click
             Me.PagerControl.PageIndex = 1
         End Sub
 
@@ -26,8 +27,12 @@ Namespace Web
                 e.Item.Cells(0).Text = DateTime.Parse(StringType.FromObject(DataBinder.Eval(e.Item.DataItem, "decision_datetime"))).ToShortDateString
                 Dim cell As TableCell = e.Item.Cells(1)
                 cell.Text = StringType.FromObject(ObjectType.AddObj(cell.Text, ObjectType.StrCatObj(ObjectType.StrCatObj(ObjectType.StrCatObj(" ", DataBinder.Eval(e.Item.DataItem, "casenumber")), " "), DataBinder.Eval(e.Item.DataItem, "year"))))
-                cell = e.Item.Cells(2)
-                cell.Text = StringType.FromObject(ObjectType.AddObj(cell.Text, ObjectType.StrCatObj(ObjectType.StrCatObj(ObjectType.StrCatObj(ObjectType.StrCatObj(ObjectType.StrCatObj(ObjectType.StrCatObj(" ", DataBinder.Eval(e.Item.DataItem, "ncncode1")), " "), DataBinder.Eval(e.Item.DataItem, "ncncitation")), " "), DataBinder.Eval(e.Item.DataItem, "ncncode2")), "")))
+                If (Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "is_published")) <> 0) Then
+                    e.Item.Cells(4).Text = "Y"
+                Else
+                    e.Item.Cells(4).Text = "N"
+                    e.Item.Cells(4).ForeColor = Color.Red
+                End If
             End If
         End Sub
 
@@ -44,18 +49,13 @@ Namespace Web
             Me.Page.RegisterClientScriptBlock("dropdowns", Me.ClientSideScript)
             Utility.PopulateCommissioners(Me.drpCommissioner, 0)
             Me.PopulateNCNYearAndNCNCitation()
-
             If Not Me.IsPostBack Then
                 Utility.PopulateCategory(Me.drpCategory)
                 Me.PagerControl.PageIndex = 1
             End If
             If Me.IsPostBack Then
-                If (Me.Request.UrlReferrer.AbsolutePath.IndexOf("view.aspx") <> -1) Then
-                    Utility.PopulateCategory(Me.drpCategory)
+                If (StringType.StrCmp(Me.Request.UrlReferrer.AbsolutePath.ToString, Me.Request.Path.ToString, False) <> 0) Then
                     Me.PagerControl.PageIndex = IntegerType.FromString(Me.Request.QueryString("PagerControl_PageIndex"))
-                    If (StringType.StrCmp(Me.Request.QueryString("drpCategory"), "", False) <> 0) Then
-                        Me.drpCategory.Items.FindByValue(Me.Request.QueryString("drpCategory")).Selected = True
-                    End If
                 End If
                 If (DoubleType.FromString(Me.drpCategory.SelectedItem.Value) <> -1) Then
                     Utility.PopulateSubCategory(Me.drpSubcategory, IntegerType.FromString(Me.drpCategory.SelectedItem.Value))
@@ -66,15 +66,10 @@ Namespace Web
                 If Not Me.Request("drpCommissioner").Equals(String.Empty) Then
                     Me.drpCommissioner.Items.FindByValue(Me.Request("drpCommissioner").ToString).Selected = True
                 End If
-                If Not Me.Request("drpNCNYear").Equals(String.Empty) Then
-                    Me.drpNCNYear.Items.FindByValue(Me.Request("drpNCNYear").ToString).Selected = True
-                End If
-                If Not Me.Request("drpNCNCitation").Equals(String.Empty) Then
-                    Me.drpNCNCitation.Items.FindByValue(Me.Request("drpNCNCitation").ToString).Selected = True
-                End If
+
             End If
             Me.drpCategory.Attributes.Add("onchange", "populate(this, 'Form1', 'drpSubcategory', this.selectedIndex);")
-            Me.btnSearch.Attributes.Add("onclick", "document.forms[0].action = ""default.aspx""")
+            'Me.btnSearch.Attributes.Add("onclick", "document.forms[0].action = ""default.aspx""")
         End Sub
 
         Private Sub Page_PreRender(ByVal sender As Object, ByVal e As EventArgs)
@@ -88,7 +83,7 @@ Namespace Web
                 Me.DecisionGrid.SortColumn = "decision_datetime"
                 Me.DecisionGrid.SortDirection = "DESC"
             End If
-            Dim ds As DataSet = New Decision().SearchPaged(criteria, PagerControl.PageIndex, PagerControl.PageSize, Me.PagerControl.ResultCount)
+            Dim ds As DataSet = New Decision().SearchPaged(criteria, Me.PagerControl.PageIndex, Me.PagerControl.PageSize, Me.PagerControl.ResultCount)
             Me.DecisionGrid.DataSource = ds
             Me.DecisionGrid.DataBind()
             Return obj2
@@ -120,10 +115,9 @@ Namespace Web
                 .SortDirection = Me.DecisionGrid.SortDirection,
                 .CategoryID = IntegerType.FromString(Me.drpCategory.SelectedItem.Value),
                 .SubCategoryID = IntegerType.FromString(Me.drpSubcategory.SelectedItem.Value),
-                .FromDate = If((DateTime.Compare(Utility.IsDate(Me.txtFromDate.Text, DateTime.MinValue), DateTime.MinValue) = 0), DateTime.MinValue, DateTime.Parse((Me.txtFromDate.Text & " 00:00:00"))),
-                .ToDate = If((DateTime.Compare(Utility.IsDate(Me.txtToDate.Text, DateTime.MinValue), DateTime.MinValue) = 0), DateTime.MinValue, DateTime.Parse((Me.txtToDate.Text & " 23:59:59"))),
-                .FromDateAdded = If((DateTime.Compare(Utility.IsDate(Me.txtFromDateAdded.Text, DateTime.MinValue), DateTime.MinValue) = 0), DateTime.MinValue, DateTime.Parse((Me.txtFromDateAdded.Text & " 00:00:00"))),
-                .ToDateAdded = If((DateTime.Compare(Utility.IsDate(Me.txtToDateAdded.Text, DateTime.MinValue), DateTime.MinValue) = 0), DateTime.MinValue, DateTime.Parse((Me.txtToDateAdded.Text & " 23:59:59"))),
+                .DecisionDate = Utility.IsDate(Me.txtDecisionDate.Text, DateTime.MinValue),
+                .FromDate = Utility.IsDate(Me.txtFromDate.Text, DateTime.MinValue),
+                .ToDate = Utility.IsDate(Me.txtToDate.Text, DateTime.MinValue),
                 .Claimant = Me.txtClaimant.Text.Trim,
                 .Prefix = Me.txtPrefix.Text.Trim,
                 .Year = Me.txtYear.Text.Trim,
@@ -132,12 +126,16 @@ Namespace Web
                 .Reported1 = Me.txtReported1.Text.Trim,
                 .Reported2 = Me.txtReported2.Text.Trim,
                 .Reported3 = Me.txtReported3.Text.Trim,
-                .IsPublished = True,
-                .Notes = Me.txtNotes.Text.Trim,
-                .Respondent = Me.txtRespondent.Text.Trim,
+                .Notes = String.Empty,
                 .NCNCitaion = IntegerType.FromString(Me.drpNCNCitation.SelectedItem.Value),
                 .NCNYear = IntegerType.FromString(Me.drpNCNYear.SelectedItem.Value)
             }
         End Function
+
+        Protected Overrides Sub PopulateTitle()
+            Me.Controls.Add(New LiteralControl("<title>OSSCSC - Admin </title>" & ChrW(10)))
+        End Sub
+
+
     End Class
 End Namespace

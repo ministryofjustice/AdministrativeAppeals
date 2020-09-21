@@ -3,7 +3,7 @@ Imports System
 Imports System.Diagnostics
 Imports System.Web.UI
 
-Namespace DCA.TribunalsService.Ossc.Web
+Namespace Web
     Public Class Header
         Inherits UserControl
         ' Methods

@@ -1,6 +1,6 @@
 <%@ Register TagPrefix="uc1" TagName="AdminNav" Src="../UserControls/AdminNav.ascx" %>
-<%@ Register TagPrefix="tt" Namespace="DCA.TribunalsService.Ossc.Web" Assembly="DCA.TribunalsService.Ossc.Web" %>
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Edit.aspx.vb" Inherits="DCA.TribunalsService.Ossc.Web.Edit" EnableEventValidation="false" %>
+<%@ Register TagPrefix="tt" Namespace="OSSCSC.Web" Assembly="OSSCSC" %>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Edit.aspx.vb" Inherits="OSSCSC.Web.Edit" EnableEventValidation="false" %>
 <script type="text/javascript">
 function populate(catSelect,formName,subSelectName,selected)
 {

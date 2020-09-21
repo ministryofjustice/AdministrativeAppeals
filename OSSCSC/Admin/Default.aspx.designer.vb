@@ -12,16 +12,7 @@ Option Explicit On
 
 Namespace Web
 
-    Partial Public Class Search
-
-        '''<summary>
-        '''Header1 control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents Header1 As Global.OSSCSC.Web.Header
+    Partial Public Class _DefaultAdmin
 
         '''<summary>
         '''Form1 control.
@@ -31,6 +22,15 @@ Namespace Web
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
+        '''<summary>
+        '''AdminNav1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents AdminNav1 As Global.OSSCSC.Web.AdminNav
 
         '''<summary>
         '''Labelforcontrol1 control.
@@ -123,6 +123,15 @@ Namespace Web
         Protected WithEvents txtYear As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
+        '''Labelforcontrol4 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Labelforcontrol4 As Global.OSSCSC.Web.LabelForControl
+
+        '''<summary>
         '''txtFromDate control.
         '''</summary>
         '''<remarks>
@@ -130,6 +139,15 @@ Namespace Web
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtFromDate As Global.OSSCSC.Web.HtmlDateControl
+
+        '''<summary>
+        '''Labelforcontrol5 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Labelforcontrol5 As Global.OSSCSC.Web.LabelForControl
 
         '''<summary>
         '''txtToDate control.
@@ -141,22 +159,13 @@ Namespace Web
         Protected WithEvents txtToDate As Global.OSSCSC.Web.HtmlDateControl
 
         '''<summary>
-        '''txtFromDateAdded control.
+        '''Labelforcontrol6 control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtFromDateAdded As Global.OSSCSC.Web.HtmlDateControl
-
-        '''<summary>
-        '''txtToDateAdded control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents txtToDateAdded As Global.OSSCSC.Web.HtmlDateControl
+        Protected WithEvents Labelforcontrol6 As Global.OSSCSC.Web.LabelForControl
 
         '''<summary>
         '''txtClaimant control.
@@ -166,15 +175,6 @@ Namespace Web
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtClaimant As Global.System.Web.UI.WebControls.TextBox
-
-        '''<summary>
-        '''txtRespondent control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents txtRespondent As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
         '''Labelforcontrol7 control.
@@ -193,33 +193,6 @@ Namespace Web
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents drpCommissioner As Global.System.Web.UI.WebControls.DropDownList
-
-        '''<summary>
-        '''Labelforcontrol4 control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents Labelforcontrol4 As Global.OSSCSC.Web.LabelForControl
-
-        '''<summary>
-        '''drpNCNYear control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents drpNCNYear As Global.System.Web.UI.WebControls.DropDownList
-
-        '''<summary>
-        '''drpNCNCitation control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents drpNCNCitation As Global.System.Web.UI.WebControls.DropDownList
 
         '''<summary>
         '''Labelforcontrol9 control.
@@ -267,13 +240,22 @@ Namespace Web
         Protected WithEvents Labelforcontrol10 As Global.OSSCSC.Web.LabelForControl
 
         '''<summary>
-        '''txtNotes control.
+        '''drpNCNYear control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtNotes As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents drpNCNYear As Global.System.Web.UI.WebControls.DropDownList
+
+        '''<summary>
+        '''drpNCNCitation control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents drpNCNCitation As Global.System.Web.UI.WebControls.DropDownList
 
         '''<summary>
         '''btnSearch control.
@@ -301,14 +283,5 @@ Namespace Web
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents PagerControl As Global.DCA.TribunalsService.Web.UI.Controls.Pager
-
-        '''<summary>
-        '''Footer1 control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents Footer1 As Global.OSSCSC.Web.Footer
     End Class
 End Namespace

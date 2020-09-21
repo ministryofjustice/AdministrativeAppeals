@@ -1,4 +1,4 @@
-<%@ Control Language="vb" AutoEventWireup="false" codebehind="Header.ascx.vb" Inherits="OSSCSC.DCA.TribunalsService.Ossc.Web.Header" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="vb" AutoEventWireup="false" codebehind="Header.ascx.vb" Inherits="OSSCSC.Web.Header" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 	<div id="container">
 	<a name="top" id="top"></a>
  	<div id="contentheader">
