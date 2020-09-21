@@ -1,5 +1,5 @@
 <%@ Register TagPrefix="trans" Namespace="DCA.TribunalsService.Web.UI.Controls" Assembly="DCA.TribunalsService.Web.UI.Controls" %>
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="EditSubCategory.aspx.vb" Inherits="DCA.TribunalsService.Ossc.Web.EditSubCategory" %>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="EditSubCategory.aspx.vb" Inherits="OSSCSC.Web.EditSubCategory" %>
 <%@ Register TagPrefix="uc1" TagName="AdminNav" Src="../UserControls/AdminNav.ascx" %>
 <form id="Form1" method="post" runat="server">
 <h1>Subcategory Management&nbsp;-&nbsp;
@@ -13,7 +13,7 @@
 											related to that Subcategory.</td>
 		</tr>
 		<tr>
-			<td align=right colspan="2"><p><asp:linkbutton id=btnAddNew runat="server">Add New Category</asp:linkbutton></p></td></tr>
+			<td align=right colspan="2"><p><asp:linkbutton id=btnAddNew runat="server">Add New Subcategory</asp:linkbutton></p></td></tr>
 		<tr>
 			<td colspan="2">
 				<trans:groupedgrid id="SubCatDataGrid" runat="server" CellPadding="2" AutoGenerateColumns="False" AllowCustomSorting="False"

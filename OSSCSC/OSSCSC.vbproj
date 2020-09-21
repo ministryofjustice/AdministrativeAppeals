@@ -349,6 +349,20 @@
       <DependentUpon>Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Admin\EditCategory.aspx.designer.vb">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCategory.aspx.vb">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditSubCategory.aspx.designer.vb">
+      <DependentUpon>EditSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditSubCategory.aspx.vb">
+      <DependentUpon>EditSubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Admin\EditUsers.aspx.designer.vb">
       <DependentUpon>EditUsers.aspx</DependentUpon>
     </Compile>

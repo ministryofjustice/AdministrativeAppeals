@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="EditCategory.aspx.vb" Inherits="DCA.TribunalsService.Ossc.Web.EditCategory" %>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="EditCategory.aspx.vb" Inherits="OSSCSC.Web.EditCategory" %>
 <%@ Register TagPrefix="uc1" TagName="AdminNav" Src="../UserControls/AdminNav.ascx" %>
 <%@ Register TagPrefix="trans" Namespace="DCA.TribunalsService.Web.UI.Controls" Assembly="DCA.TribunalsService.Web.UI.Controls" %>
 <h1>Category Management</h1>
