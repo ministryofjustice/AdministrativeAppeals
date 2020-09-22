@@ -5530,7 +5530,6 @@
     <Content Include="JudgmentFiles\j5040\GIA 1384 2013-01.doc" />
     <Content Include="JudgmentFiles\j5041\CAF 1236 2014-00.doc" />
     <Content Include="JudgmentFiles\j5042\CPC 0003 2016-00.doc" />
-    <Content Include="JudgmentFiles\j5043\CPIP 2377 2015-00.doc" />
     <Content Include="JudgmentFiles\j5044\CTC 0616 2011-00.doc" />
     <Content Include="JudgmentFiles\j5045\CTC 0616 2011-00.doc" />
     <Content Include="JudgmentFiles\j504\Is02_93.doc" />
@@ -6079,10 +6078,12 @@
     <Content Include="Library\bottomnav.lbi" />
     <Content Include="Library\logo_topnav_search_mainnav.lbi" />
     <Content Include="Logs\trace.log" />
+    <Content Include="JudgmentFiles\j5043\CE 1650 2013-00.doc" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\FolderPublish.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
