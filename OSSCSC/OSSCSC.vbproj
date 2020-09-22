@@ -209,7 +209,6 @@
     <Content Include="Decisions\recentHousingBenefitDecisions.htm" />
     <Content Include="Decisions\recentReportedDecisionsNICommissioners.htm" />
     <Content Include="Decisions\trafficCommissioners.htm" />
-    <Content Include="Default.aspx" />
     <Content Include="error.aspx" />
     <Content Include="ExternalDlls\blowery.Web.HttpCompress.dll" />
     <Content Include="ExternalDlls\DCA.TribunalsService.Web.UI.Controls.dll" />
@@ -318,13 +317,10 @@
     <Content Include="Styles\stylesIE7.css" />
     <Content Include="Styles\stylesPrint.css" />
     <Content Include="Styles\textonly.css" />
-    <Content Include="UpdateJudgments.aspx" />
     <Content Include="UserControls\AdminNav.ascx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
     <Content Include="UserControls\Links.ascx" />
-    <Content Include="UserControls\zFooter.ascx" />
-    <Content Include="UserControls\zHeader.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
