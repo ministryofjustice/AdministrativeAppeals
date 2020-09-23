@@ -41,6 +41,7 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>OSSCSC.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeFoldersFromDeployment>JudgementFiles</ExcludeFoldersFromDeployment>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DCA.TribunalsService.Web.UI.Controls, Version=1.0.2274.18897, Culture=neutral">
