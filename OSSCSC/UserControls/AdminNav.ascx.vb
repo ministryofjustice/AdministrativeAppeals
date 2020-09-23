@@ -18,7 +18,7 @@ Namespace Web
         Private Sub InitializeComponent()
         End Sub
 
-        Private Sub lnkSignOut_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Private Sub lnkSignOut_Click(ByVal sender As Object, ByVal e As EventArgs) Handles lnkSignOut.Click
             FormsAuthentication.SignOut()
             Me.Response.Redirect("Default.aspx")
         End Sub
