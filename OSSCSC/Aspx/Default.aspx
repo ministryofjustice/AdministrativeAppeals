@@ -5,7 +5,6 @@
 <%@ Register TagPrefix="trans" Namespace="DCA.TribunalsService.Web.UI.Controls" Assembly="DCA.TribunalsService.Web.UI.Controls" %>
 <uc1:Header id="Header1" runat="server"></uc1:Header>
 <script src="../Javascript/PopulateSubcategory.js" type="text/javascript"></script>
-<script src='jquery.js' type='text/javascript'></script>
 <h1>Search For Decisions</h1>
 
 <h3>This website includes decisions prior to January 2016. Details of newer cases can be found at the following: <a href="https://www.gov.uk/administrative-appeals-tribunal-decisions">https://www.gov.uk/administrative-appeals-tribunal-decisions</a></h3>

@@ -144,8 +144,6 @@
     <Content Include="aspnet_client\system_web\1_1_4322\SmartNav.js" />
     <Content Include="aspnet_client\system_web\1_1_4322\WebUIValidation.js" />
     <Content Include="Aspx\Default.aspx" />
-    <Content Include="Aspx\ErrDefault.aspx" />
-    <Content Include="Aspx\jquery.js" />
     <Content Include="Aspx\View.aspx" />
     <Content Include="bin\DCA.TribunalsService.Web.UI.Controls.dll" />
     <Content Include="bin\Microsoft.ApplicationBlocks.Data.dll" />
