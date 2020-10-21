@@ -11,8 +11,8 @@
 <ul>
 	
 
-	<li><a href="http://www.justice.gov.uk/" title="Ministry of Justice"><img src="http://www.osscsc.gov.uk/images/MoJ_logo.jpg" alt="Ministry of Justice" width="108" height="40" /></a></li>
-	<li><a href="http://www.direct.gov.uk/en/index.htm" title="Directgov"><img src="http://www.osscsc.gov.uk/images/girectgov.gif" height="40" width="90" alt="Directgov logo" /></a></li>  
+	<li><a href="http://www.justice.gov.uk/" title="Ministry of Justice"><img src="/Images/MoJ_logo.jpg" alt="Ministry of Justice" width="108" height="40" /></a></li>
+	<li><a href="http://www.direct.gov.uk/en/index.htm" title="Directgov"><img src="/Images/girectgov.gif" height="40" width="90" alt="Directgov logo" /></a></li>  
 </ul> 
 </div>
 </div>	
