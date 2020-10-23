@@ -7,7 +7,7 @@ Namespace Data
         Public Function AuthenticateUser(ByVal Username As String, ByVal Password As String) As DataSet
 
             Dim parameters() As SqlParameter = {New SqlParameter("@Username", SqlDbType.VarChar, 100),
-                                                New SqlParameter("@Password", SqlDbType.VarChar, 15)}
+                                                New SqlParameter("@Password", SqlDbType.VarChar, 50)}
 
             parameters(0).Value = Username
             parameters(1).Value = Password
