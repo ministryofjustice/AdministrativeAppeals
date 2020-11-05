@@ -884,6 +884,9 @@
     <Content Include="Documents\welsh\UT6_PAT_GuidanceNotesV1.pdf" />
     <Content Include="Documents\welsh\UT7_PAT_SOS_ApplicationFormV1.doc" />
     <Content Include="Documents\welsh\UT7_PAT_SOS_ApplicationFormV1.pdf" />
+    <Content Include="Library\bottomnav.lbi" />
+    <Content Include="Library\logo_topnav_search_mainnav.lbi" />
+    <Content Include="Logs\trace.log" />
     <Content Include="JudgmentFiles\00f76f8f-3677-4da7-a6a7-6444807e808e\CH 1782 2014 refusal.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 1627 2011-00.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 2197 2011-00.doc" />
@@ -902,11 +905,13 @@
     <Content Include="JudgmentFiles\351e2d6d-dd16-4d52-a90c-42b327ed00dd\T-2010-2  4 Colin Fletcher ta MCUK Haulage etc.doc" />
     <Content Include="JudgmentFiles\38e284b6-5482-402c-a648-92355c45ca6e\UK 0202 2015-00.doc" />
     <Content Include="JudgmentFiles\3b25e39d-2deb-4c8b-bd22-51a3c1e6a043\CI 0535 2005-00.doc" />
+    <Content Include="JudgmentFiles\3c1f83b2-3b79-4449-80d7-eaa8fb4bbc96\CSDLA 567 05.doc" />
     <Content Include="JudgmentFiles\3cb116da-e657-403d-b2b8-0e5393ad8cf1\2009 488  The Roseglen Hotel.doc" />
     <Content Include="JudgmentFiles\3f0e3121-f8ff-432d-97c9-86624d50c897\CSH 41 2014 and CSH 42 2014  - James Nelson.doc" />
     <Content Include="JudgmentFiles\45d3152d-3877-49d1-abee-ae19776a3ce8\NT 2015-40-Tacsi Gwynedd %28nov%29.docm" />
     <Content Include="JudgmentFiles\49d1181c-d63c-47d4-9936-20dfbc6d3065\JR 2942 2011-00.doc" />
     <Content Include="JudgmentFiles\4a347142-260f-43ba-bf0c-aefe7f6a2812\CH 3530 2007-00.doc" />
+    <Content Include="JudgmentFiles\4dd9a67d-e368-4ae3-be15-96eab69d90d1\CE 0006 2014-00.doc" />
     <Content Include="JudgmentFiles\522bdf98-89cd-4564-91b7-463450622664\CAF 3835.2014-00.docm" />
     <Content Include="JudgmentFiles\53cbe600-ccb6-4c37-a09d-dc1646e3efca\CIS 1068 2006-00.doc" />
     <Content Include="JudgmentFiles\56e4a1b3-0fac-43ed-b4bb-232d0a2ee00f\CSG 192 2010.doc" />
@@ -922,6 +927,7 @@
     <Content Include="JudgmentFiles\8e0ef8f1-f339-43b8-ba37-99f71b0a1d2d\CIS 2494 2012-00.doc" />
     <Content Include="JudgmentFiles\8e64131f-2585-4a79-9794-9a21a73518bd\CH 3530 2007-00.doc" />
     <Content Include="JudgmentFiles\98097f4a-b92f-487f-a082-c7eaf0d620fb\JR 2638 2012-00.doc" />
+    <Content Include="JudgmentFiles\9e4f6924-8ece-4236-82ad-5a1ab1f01d3b\CSDLA 567 05.doc" />
     <Content Include="JudgmentFiles\a4bd7ec3-6d34-4f8d-96fa-b70d11488e23\CSDLA 140 2006.doc" />
     <Content Include="JudgmentFiles\a529f03a-94fe-4064-856a-c0673c6d8996\JR 1043 2010-00.doc" />
     <Content Include="JudgmentFiles\a5408ea5-6f61-40cc-9ef3-8f48227c3117\CH 0628 2010-00.doc" />
@@ -5083,6 +5089,7 @@
     <Content Include="JudgmentFiles\j4642\HS 718 2015-00.doc" />
     <Content Include="JudgmentFiles\j4643\CH 4784 2014-00.doc" />
     <Content Include="JudgmentFiles\j4644\JR 4047 2014-00.doc" />
+    <Content Include="JudgmentFiles\j4644\[2018] AACR 34ws.pdf" />
     <Content Include="JudgmentFiles\j4645\T 2015 33-FINAL.doc" />
     <Content Include="JudgmentFiles\j4646\T 2015 30 Julie Smith.doc" />
     <Content Include="JudgmentFiles\j4647\[2016] AACR 15ws.doc" />
@@ -5164,6 +5171,7 @@
     <Content Include="JudgmentFiles\j4715\CH 2100 2015-00.doc" />
     <Content Include="JudgmentFiles\j4716\CH 2391 2015-00.doc" />
     <Content Include="JudgmentFiles\j4717\HM 2133 2015-00.doc" />
+    <Content Include="JudgmentFiles\j4717\[2019] AACR 7ws.pdf" />
     <Content Include="JudgmentFiles\j4718\CDLA 1123 2015-00.doc" />
     <Content Include="JudgmentFiles\j4719\[2016] AACR 23ws.doc" />
     <Content Include="JudgmentFiles\j471\CS2_96.doc" />
@@ -5528,6 +5536,9 @@
     <Content Include="JudgmentFiles\j5040\GIA 1384 2013-01.doc" />
     <Content Include="JudgmentFiles\j5041\CAF 1236 2014-00.doc" />
     <Content Include="JudgmentFiles\j5042\CPC 0003 2016-00.doc" />
+    <Content Include="JudgmentFiles\j5043\CPIP 2377 2015-00.doc" />
+    <Content Include="JudgmentFiles\j5044\CTC 0616 2011-00.doc" />
+    <Content Include="JudgmentFiles\j5045\CTC 0616 2011-00.doc" />
     <Content Include="JudgmentFiles\j504\Is02_93.doc" />
     <Content Include="JudgmentFiles\j505\Is03_93.doc" />
     <Content Include="JudgmentFiles\j506\Is04_93.doc" />
@@ -6071,10 +6082,6 @@
     <Content Include="JudgmentFiles\j999\cis 2641 2002.doc" />
     <Content Include="JudgmentFiles\j99\p1_01.doc" />
     <Content Include="JudgmentFiles\j9\R%28IS%29 4-03 final.doc" />
-    <Content Include="Library\bottomnav.lbi" />
-    <Content Include="Library\logo_topnav_search_mainnav.lbi" />
-    <Content Include="Logs\trace.log" />
-    <Content Include="JudgmentFiles\j5043\CE 1650 2013-00.doc" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
