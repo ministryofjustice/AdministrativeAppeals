@@ -6081,7 +6081,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\PublishProfiles\FolderPublish.pubxml" />
+    <None Include="My Project\PublishProfiles\AdministrativeAppeals-NormalPublish.pubxml" />
     <None Include="My Project\PublishProfiles\Vera-Publish.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
