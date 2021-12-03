@@ -77,11 +77,11 @@
     </ProjectReference>
     <Reference Include="Microsoft.ApplicationBlocks.Data">
       <Name>Microsoft.ApplicationBlocks.Data</Name>
-      <HintPath>..\..\..\..\..\..\Inetpub\wwwroot\Ossc\ExternalDlls\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath>..\OSSCSC\bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
     <Reference Include="SqlOM">
       <Name>SqlOM</Name>
-      <HintPath>..\..\..\..\..\..\Inetpub\wwwroot\Ossc\ExternalDlls\SqlOM.dll</HintPath>
+      <HintPath>..\OSSCSC\bin\SqlOM.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
