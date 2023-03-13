@@ -27,7 +27,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-OSSCSC/Web.config
+#OSSCSC/Web.config
 OSSCSC/JudgmentFiles/*/
 
 # Visual Studio 2015/2017 cache/options directory
