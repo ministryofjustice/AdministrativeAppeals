@@ -1,0 +1,107 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-2:263310006819:task-definition/appealsFamily:3",
+  "containerDefinitions": [
+    {
+      "name": "appeals-container",
+      "image": "mcr.microsoft.com/dotnet/framework/aspnet:4.8",
+      "cpu": 1024,
+      "memory": 2048,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "supportEmail",
+          "value": "dts-legacy-apps-support-team@hmcts.net"
+        },
+        {
+          "name": "RDS_HOSTNAME",
+          "value": "tribunals-rds-dev.cxhalkqevlbg.eu-west-2.rds.amazonaws.com"
+        },
+        {
+          "name": "RDS_PASSWORD",
+          "value": "***"
+        },
+        {
+          "name": "CurServer",
+          "value": "DEVELOPMENT"
+        },
+        {
+          "name": "RDS_PORT",
+          "value": "1433"
+        },
+        {
+          "name": "DB_NAME",
+          "value": "ossc"
+        },
+        {
+          "name": "supportTeam",
+          "value": "DTS Legacy Apps Support Team"
+        },
+        {
+          "name": "RDS_USERNAME",
+          "value": "***"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/appealsFamily",
+          "awslogs-region": "eu-west-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "family": "appealsFamily",
+  "taskRoleArn": "arn:aws:iam::263310006819:role/task-appeals",
+  "executionRoleArn": "arn:aws:iam::263310006819:role/execution-appeals",
+  "networkMode": "awsvpc",
+  "revision": 3,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": [
+    "EC2",
+    "FARGATE"
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "2048",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "WINDOWS_SERVER_2019_CORE"
+  },
+  "registeredAt": "2023-07-26T16:15:25.579Z",
+  "registeredBy": "arn:aws:sts::263310006819:assumed-role/MemberInfrastructureAccess/aws-go-sdk-1690387543724542029",
+  "tags": []
+}
