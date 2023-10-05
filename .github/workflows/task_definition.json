@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-west-2:263310006819:task-definition/appeals-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-2:263310006819:task-definition/appeals-task-definition:5",
   "containerDefinitions": [
     {
       "name": "appeals-container",
@@ -9,8 +9,9 @@
       "portMappings": [
         {
           "containerPort": 80,
-          "hostPort": 443,
-          "protocol": "tcp"
+          "hostPort": 0,
+          "protocol": "tcp",
+          "appProtocol": "http"
         }
       ],
       "essential": true,
@@ -50,7 +51,7 @@
   "family": "appeals-task-definition",
   "taskRoleArn": "arn:aws:iam::263310006819:role/appeals-ecs-task-execution-role",
   "executionRoleArn": "arn:aws:iam::263310006819:role/appeals-ecs-task-execution-role",
-  "revision": 1,
+  "revision": 5,
   "volumes": [
     {
       "name": "upload_volume",
@@ -74,7 +75,6 @@
   ],
   "placementConstraints": [],
   "compatibilities": [
-    "EXTERNAL",
     "EC2"
   ],
   "requiresCompatibilities": [
@@ -83,8 +83,8 @@
   "runtimePlatform": {
     "operatingSystemFamily": "WINDOWS_SERVER_2019_CORE"
   },
-  "registeredAt": "2023-10-02T15:52:59.626Z",
-  "registeredBy": "arn:aws:sts::263310006819:assumed-role/MemberInfrastructureAccess/aws-go-sdk-1696261895140600769",
+  "registeredAt": "2023-10-04T13:26:06.803Z",
+  "registeredBy": "arn:aws:sts::263310006819:assumed-role/MemberInfrastructureAccess/aws-go-sdk-1696425902596452408",
   "tags": [
     {
       "key": "owner",
