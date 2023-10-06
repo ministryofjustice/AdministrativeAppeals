@@ -9,9 +9,8 @@
       "portMappings": [
         {
           "containerPort": 80,
-          "hostPort": 0,
-          "protocol": "tcp",
-          "appProtocol": "http"
+          "hostPort": 443,
+          "protocol": "tcp"
         }
       ],
       "essential": true,
