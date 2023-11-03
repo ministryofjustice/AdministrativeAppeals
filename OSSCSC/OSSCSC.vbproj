@@ -890,7 +890,7 @@
     <Content Include="Library\bottomnav.lbi" />
     <Content Include="Library\logo_topnav_search_mainnav.lbi" />
     <Content Include="Logs\trace.log" />
-    <Content Include="JudgmentFiles\00f76f8f-3677-4da7-a6a7-6444807e808e\CH 1782 2014 refusal.doc" />
+    <!-- <Content Include="JudgmentFiles\00f76f8f-3677-4da7-a6a7-6444807e808e\CH 1782 2014 refusal.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 1627 2011-00.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 2197 2011-00.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 2992 2011-00.doc" />
@@ -6084,7 +6084,7 @@
     <Content Include="JudgmentFiles\j998\R%28JSA%29 1_05 bv.doc" />
     <Content Include="JudgmentFiles\j999\cis 2641 2002.doc" />
     <Content Include="JudgmentFiles\j99\p1_01.doc" />
-    <Content Include="JudgmentFiles\j9\R%28IS%29 4-03 final.doc" />
+    <Content Include="JudgmentFiles\j9\R%28IS%29 4-03 final.doc" /> -->
     <Content Include=".dockerignore" />
     <Content Include="Dockerfile" />
     <None Include="My Project\Application.myapp">
