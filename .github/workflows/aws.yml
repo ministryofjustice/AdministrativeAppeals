@@ -10,9 +10,7 @@ env:
   AWS_REGION: eu-west-2
   ECR_REPOSITORY: appeals-ecr-repo
   ECS_SERVICE: appeals
-  ECS_CLUSTER: appeals_app_cluster
-  ECS_TASK_DEFINITION: .github/workflows/task_definition.json
-  CONTAINER_NAME: appeals-container
+  ECS_CLUSTER: tribunals-all-cluster
 
 jobs:
   deploy:
