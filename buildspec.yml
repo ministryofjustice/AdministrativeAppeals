@@ -5,9 +5,9 @@ env:
     PROJECT: OSSCSC
     DOTNET_FRAMEWORK: 4.8
   secrets-manager:
-    DB_PASSWORD: "tf-tribunals-osscsc-dev-credentials:password"
-    DB_USER: "tf-tribunals-osscsc-dev-credentials:username"
-    DB_HOST: "tf-tribunals-osscsc-dev-credentials:host"
+    DB_PASSWORD: "appeals-db-credentials-2:password"
+    DB_USER: "appeals-db-credentials-2:username"
+    DB_HOST: "appeals-db-credentials-2:host"
 phases:  
   build:
     commands:    
@@ -16,7 +16,7 @@ phases:
       - cd ${env:PROJECT}
       - dir
       - (Get-Content Web.config).replace('RDS_SERVER', ${DB_HOST}) | Set-Content Web.config
-      - (Get-Content Web.config).replace('RDS_DATABASE_NAME', 'transport') | Set-Content Web.config
+      - (Get-Content Web.config).replace('RDS_DATABASE_NAME', 'ossc') | Set-Content Web.config
       - (Get-Content Web.config).replace('RDS_USER_ID', ${DB_USER}) | Set-Content Web.config
       - (Get-Content Web.config).replace('RDS_USER_PASSWORD', ${DB_PASSWORD}) | Set-Content Web.config
       - cat Web.config
