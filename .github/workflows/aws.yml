@@ -50,6 +50,13 @@ jobs:
           role-to-assume: arn:aws:iam::${{ vars.ACCOUNT_ID }}:role/modernisation-platform-oidc-cicd
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Get RDS Credential
+        uses: aws-actions/aws-secretsmanager-get-secrets@v1
+        with:
+          secret-ids: |
+            appeals-db-credentials-2
+          parse-json-secrets: true
+
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
