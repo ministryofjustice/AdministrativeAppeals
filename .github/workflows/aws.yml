@@ -71,10 +71,10 @@ jobs:
           # Build a docker container and push it to ECR so that it can be deployed to ECS.
           nuget restore
           cd OSSCSC          
-          (Get-Content Web.config).replace('RDS_SERVER', '${{secrets.DB_HOST}}') | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_DATABASE_NAME', 'ossc') | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_USER_ID', '${{secrets.DB_USER}}') | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_USER_PASSWORD', '${{secrets.DB_PASSWORD}}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_SERVER', '${{env.APPEALS-DB-CREDENTIALS-2_HOST}}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_DATABASE_NAME', '${{env.APPEALS-DB-CREDENTIALS-2_DATABASE}}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_ID', '${{env.APPEALS-DB-CREDENTIALS-2_USERNAME}}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_PASSWORD', '${{env.APPEALS-DB-CREDENTIALS-2_PASSWORD}}') | Set-Content Web.config
           #cat Web.config          
           mkdir PublishedWebSite
           msbuild $env:PROJECT.vbproj /p:TargetFrameworkVersion=v4.8 /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=PublishedWebSite
