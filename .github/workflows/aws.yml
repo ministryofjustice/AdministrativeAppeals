@@ -61,7 +61,11 @@ jobs:
       - name: Check Credentials
         id: check-credentials
         run: |
-          if [ -z ${APPEALS_DB_CREDENTIALS_2_HOST+x} ]; then echo "APPEALS_DB_CREDENTIALS_2_HOST is unset"; else echo "APPEALS_DB_CREDENTIALS_2_HOST is set to 'APPEALS_DB_CREDENTIALS_2_HOST'"; fi
+          if [[ -z ${APPEALS_DB_CREDENTIALS_2_HOST} ]]; then 
+            echo "APPEALS_DB_CREDENTIALS_2_HOST is unset"
+          else
+            echo "APPEALS_DB_CREDENTIALS_2_HOST is set to 'APPEALS_DB_CREDENTIALS_2_HOST'"
+          fi
 
       - name: Login to Amazon ECR
         id: login-ecr
