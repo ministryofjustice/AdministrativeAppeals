@@ -51,11 +51,17 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Get RDS Credential
+        id: get-credentials
         uses: aws-actions/aws-secretsmanager-get-secrets@v1
         with:
           secret-ids: |
             appeals-db-credentials-2
           parse-json-secrets: true
+
+      - name: Check Credentials
+        id: check-credentials
+        run: |
+          if [ -z ${APPEALS_DB_CREDENTIALS_2_HOST+x} ]; then echo "APPEALS_DB_CREDENTIALS_2_HOST is unset"; else echo "APPEALS_DB_CREDENTIALS_2_HOST is set to 'APPEALS_DB_CREDENTIALS_2_HOST'"; fi
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -71,10 +77,10 @@ jobs:
           # Build a docker container and push it to ECR so that it can be deployed to ECS.
           nuget restore
           cd OSSCSC          
-          (Get-Content Web.config).replace('RDS_SERVER', '${{env.APPEALS-DB-CREDENTIALS-2_HOST}}') | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_DATABASE_NAME', '${{env.APPEALS-DB-CREDENTIALS-2_DATABASE}}') | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_USER_ID', '${{env.APPEALS-DB-CREDENTIALS-2_USERNAME}}') | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_USER_PASSWORD', '${{env.APPEALS-DB-CREDENTIALS-2_PASSWORD}}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_SERVER', '${APPEALS_DB_CREDENTIALS_2_HOST}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_DATABASE_NAME', '${APPEALS_DB_CREDENTIALS_2_DATABASE}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_ID', '${APPEALS_DB_CREDENTIALS_2_USERNAME}') | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_PASSWORD', '${APPEALS_DB_CREDENTIALS_2_PASSWORD}') | Set-Content Web.config
           #cat Web.config          
           mkdir PublishedWebSite
           msbuild $env:PROJECT.vbproj /p:TargetFrameworkVersion=v4.8 /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=PublishedWebSite
