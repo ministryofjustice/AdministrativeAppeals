@@ -83,7 +83,7 @@ jobs:
           nuget restore
           cd OSSCSC          
           (Get-Content Web.config).replace('RDS_SERVER', $env:APPEALS_DB_CREDENTIALS_2_HOST) | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_DATABASE_NAME', $env:APPEALS_DB_CREDENTIALS_2_DATABASE) | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_DATABASE_NAME', $env:APPEALS_DB_CREDENTIALS_2_DATABASE_NAME) | Set-Content Web.config
           (Get-Content Web.config).replace('RDS_USER_ID', $env:APPEALS_DB_CREDENTIALS_2_USERNAME) | Set-Content Web.config
           (Get-Content Web.config).replace('RDS_USER_PASSWORD', $env:APPEALS_DB_CREDENTIALS_2_PASSWORD) | Set-Content Web.config
           #cat Web.config          
