@@ -20,9 +20,18 @@ Namespace Web
         Private Sub InitializeComponent()
         End Sub
 
+        Private Sub debug(ByVal msg as String)
+            Dim strFile As String = "mgb.log"
+            Dim fileExists As Boolean = File.Exists(strFile)
+            Using sw As New StreamWriter(File.Open(strFile, FileMode.OpenOrCreate))
+                sw.WriteLine(IIf(fileExists, msg))
+            End Using
+        End Sub
+
         Private Sub ListJudgmentFiles()
             Dim str2 As String = ("j" & Me.decisionId.ToString)
             Dim path As String = Me.DirectoryPath((str2 & "/"))
+            debug(path)
             If Directory.Exists(path) Then
                 Dim files As FileInfo() = New DirectoryInfo(path).GetFiles
                 Dim i As Integer
