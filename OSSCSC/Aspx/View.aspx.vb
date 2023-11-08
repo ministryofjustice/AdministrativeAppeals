@@ -24,7 +24,7 @@ Namespace Web
             Dim strFile As String = "mgb.log"
             Dim fileExists As Boolean = File.Exists(strFile)
             Using sw As New StreamWriter(File.Open(strFile, FileMode.OpenOrCreate))
-                sw.WriteLine(IIf(fileExists, msg))
+                sw.WriteLine(msg)
             End Using
         End Sub
 
