@@ -79,7 +79,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
-          # Build a docker container and push it to ECR so that it can be deployed to ECS.
+          # Build a docker container and push it to ECR so that it can be deployed to ECS
           nuget restore
           cd OSSCSC          
           (Get-Content Web.config).replace('RDS_SERVER', $env:APPEALS_DB_CREDENTIALS_2_HOST) | Set-Content Web.config
