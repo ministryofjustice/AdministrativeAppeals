@@ -32,6 +32,7 @@ Namespace Web
             Dim str2 As String = ("j" & Me.decisionId.ToString)
             Dim path As String = Me.DirectoryPath((str2 & "/"))
             debug(path)
+            'debug(Page.User.Identity.Name)
             If Directory.Exists(path) Then
                 debug("folder exists")
                 Dim files As FileInfo() = New DirectoryInfo(path).GetFiles
@@ -53,6 +54,7 @@ Namespace Web
                 Next i
             Else
                 debug("folder doesn't exist")
+                File.GetAttributes(path)
             End If
         End Sub
 
