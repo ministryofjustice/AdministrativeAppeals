@@ -21,7 +21,7 @@ Namespace Web
         End Sub
 
         Private Sub debug(ByVal msg as String)
-            Dim strFile As String = "C:\\inetpub\\logs\\LogFiles\\W3SVC1\\mgb.log"
+            Dim strFile As String = "C:\\Windows\\Temp\\mgb.log"
             Dim fileExists As Boolean = File.Exists(strFile)
             Using sw As New StreamWriter(File.Open(strFile, FileMode.OpenOrCreate))
                 sw.WriteLine(msg)
