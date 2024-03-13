@@ -55,7 +55,7 @@ jobs:
         uses: aws-actions/aws-secretsmanager-get-secrets@v1
         with:
           secret-ids: |
-            appeals-db-credentials-2
+            appeals-credentials-db-2
           parse-json-secrets: true
 
       - name: Check Credentials
