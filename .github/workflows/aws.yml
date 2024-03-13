@@ -92,7 +92,7 @@ jobs:
           docker build -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest .
           docker push ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest
           echo "image=${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest" >> $Env:GITHUB_OUTPUT
-                   
+
       - name: Force ecs deployment
         run: |
           aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --force-new-deployment
