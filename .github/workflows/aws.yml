@@ -55,7 +55,7 @@ jobs:
         uses: aws-actions/aws-secretsmanager-get-secrets@v1
         with:
           secret-ids: |
-            appeals-credentials-db-2
+            appeals-credentials-db-2,
             tribunals-db-dev_credentials
           parse-json-secrets: true
 
@@ -67,6 +67,9 @@ jobs:
           }
           else {
             echo "APPEALS_CREDENTIALS_DB_2_HOST is set to $env:APPEALS_CREDENTIALS_DB_2_HOST"
+            echo "APPEALS_CREDENTIALS_DB_2_DATABASE_NAME is set to $env:APPEALS_CREDENTIALS_DB_2_DATABASE_NAME"
+            echo "TRIBUNALS_DB_DEV_CREDENTIALS_USERNAME is set to $env:TRIBUNALS_DB_DEV_CREDENTIALS_USERNAME"
+            echo "TRIBUNALS_DB_DEV_CREDENTIALS_PASSWORD is set to $env:TRIBUNALS_DB_DEV_CREDENTIALS_PASSWORD"
           }
 
       - name: Login to Amazon ECR
