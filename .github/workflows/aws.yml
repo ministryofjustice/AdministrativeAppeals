@@ -55,7 +55,7 @@ jobs:
         uses: aws-actions/aws-secretsmanager-get-secrets@v1
         with:
           secret-ids: |
-            appeals-credentials-db-2,
+            appeals-credentials-db-2
             tribunals-db-dev_credentials
           parse-json-secrets: true
 
