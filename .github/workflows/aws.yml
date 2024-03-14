@@ -56,6 +56,7 @@ jobs:
         with:
           secret-ids: |
             appeals-credentials-db-2
+            tribunals-db-dev_credentials
           parse-json-secrets: true
 
       - name: Check Credentials
@@ -84,8 +85,8 @@ jobs:
           cd OSSCSC          
           (Get-Content Web.config).replace('RDS_SERVER', $env:APPEALS_CREDENTIALS_DB_2_HOST) | Set-Content Web.config
           (Get-Content Web.config).replace('RDS_DATABASE_NAME', $env:APPEALS_CREDENTIALS_DB_2_DATABASE_NAME) | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_USER_ID', $env:APPEALS_CREDENTIALS_DB_2_USERNAME) | Set-Content Web.config
-          (Get-Content Web.config).replace('RDS_USER_PASSWORD', $env:APPEALS_CREDENTIALS_DB_2_PASSWORD) | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_ID', $env:TRIBUNALS_DB_DEV_CREDENTIALS_USERNAME) | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_PASSWORD', $env:TRIBUNALS_DB_DEV_CREDENTIALS_PASSWORD) | Set-Content Web.config
           #cat Web.config          
           mkdir PublishedWebSite
           msbuild $env:PROJECT.vbproj /p:TargetFrameworkVersion=v4.8 /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=PublishedWebSite
