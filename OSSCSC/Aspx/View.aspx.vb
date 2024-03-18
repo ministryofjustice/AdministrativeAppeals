@@ -36,7 +36,7 @@ Namespace Web
             If Directory.Exists(path) Then
                 debug("folder exists")
                 Dim files As FileInfo() = New DirectoryInfo(path).GetFiles
-                debug("number of files " + files.Length)
+                debug("number of files " + files.Length.ToString())
                 Dim i As Integer
                 For i = 0 To files.Length - 1
                     Dim child As New HyperLink With {
