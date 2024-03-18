@@ -154,7 +154,7 @@
     <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Configuration.dll" />
     <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
     <Content Include="bin\SqlOM.dll" />
-    <Content Include="bin\VBCommenterLog.txt" />
+    <!-- <Content Include="bin\VBCommenterLog.txt" /> -->
     <Content Include="bin\XHTMLStrictFilter.dll" />
     <Content Include="CaseLaw\caseLaw.htm" />
     <Content Include="CaseLaw\groundsForAppeal.htm" />
@@ -296,10 +296,10 @@
     <Content Include="Javascript\PopulateSubcategory.js" />
     <Content Include="latestnews.htm" />
     <Content Include="NEWstyles.css" />
-    <Content Include="obj\Debug\OSSCSC.dll" />
-    <Content Include="obj\Debug\OSSCSC.pdb" />
-    <Content Include="obj\Debug\OSSCSC.vbproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\OSSCSC.xml" />
+    <!-- <Content Include="obj\Debug\OSSCSC.dll" /> -->
+    <!-- <Content Include="obj\Debug\OSSCSC.pdb" /> -->
+    <!-- <Content Include="obj\Debug\OSSCSC.vbproj.FileListAbsolute.txt" /> -->
+    <!-- <Content Include="obj\Debug\OSSCSC.xml" /> -->
     <Content Include="Publications\annualReports.htm" />
     <Content Include="Publications\industrialInjuriesAdvisoryCouncil.htm" />
     <Content Include="Publications\otherExternalLinks.htm" />
@@ -443,11 +443,11 @@
   <ItemGroup>
     <Content Include="loggingconfiguration.config" />
     <Content Include="loggingdistributorconfiguration.config" />
-    <Content Include=".vs\osscsc\v16\TestStore\0\000.testlog" />
-    <Content Include=".vs\osscsc\v16\TestStore\0\testlog.manifest" />
-    <Content Include=".vs\ProjectSettings.json" />
-    <Content Include=".vs\slnx.sqlite" />
-    <Content Include=".vs\VSWorkspaceState.json" />
+    <!-- <Content Include=".vs\osscsc\v16\TestStore\0\000.testlog" /> -->
+    <!-- <Content Include=".vs\osscsc\v16\TestStore\0\testlog.manifest" /> -->
+    <!-- <Content Include=".vs\ProjectSettings.json" /> -->
+    <!-- <Content Include=".vs\slnx.sqlite" /> -->
+    <!-- <Content Include=".vs\VSWorkspaceState.json" /> -->
     <Content Include="Admin\Web.config" />
     <Content Include="Documents\Admin Appeals chamber UT leaflet care standards 10.08 v1.22.doc" />
     <Content Include="Documents\Admin Appeals chamber UT leaflet mental health 27.7.08 v2.1.doc" />
@@ -889,8 +889,8 @@
     <Content Include="Documents\welsh\UT7_PAT_SOS_ApplicationFormV1.pdf" />
     <Content Include="Library\bottomnav.lbi" />
     <Content Include="Library\logo_topnav_search_mainnav.lbi" />
-    <Content Include="Logs\trace.log" />
-    <Content Include="JudgmentFiles\00f76f8f-3677-4da7-a6a7-6444807e808e\CH 1782 2014 refusal.doc" />
+    <!-- <Content Include="Logs\trace.log" /> -->
+    <!-- <Content Include="JudgmentFiles\00f76f8f-3677-4da7-a6a7-6444807e808e\CH 1782 2014 refusal.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 1627 2011-00.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 2197 2011-00.doc" />
     <Content Include="JudgmentFiles\0b1a8a04-33fe-4a17-a818-62ba6e007b9d\CCS 2992 2011-00.doc" />
@@ -6084,7 +6084,7 @@
     <Content Include="JudgmentFiles\j998\R%28JSA%29 1_05 bv.doc" />
     <Content Include="JudgmentFiles\j999\cis 2641 2002.doc" />
     <Content Include="JudgmentFiles\j99\p1_01.doc" />
-    <Content Include="JudgmentFiles\j9\R%28IS%29 4-03 final.doc" />
+    <Content Include="JudgmentFiles\j9\R%28IS%29 4-03 final.doc" /> -->
     <Content Include=".dockerignore" />
     <Content Include="Dockerfile" />
     <None Include="My Project\Application.myapp">
@@ -6098,10 +6098,10 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <!-- <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\OSSCSC.vbproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\OSSCSC.vbproj.GenerateResource.cache" />
-    <Content Include="obj\Debug\OSSCSC.vbprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\OSSCSC.vbprojAssemblyReference.cache" /> -->
     <Content Include="Templates\template1.dwt" />
     <Content Include="Templates\template2.dwt" />
     <Content Include="Templates\template3.dwt" />
