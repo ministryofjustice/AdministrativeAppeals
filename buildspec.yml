@@ -1,0 +1,29 @@
+version: 0.2
+
+env:
+  variables:
+    PROJECT: OSSCSC
+    DOTNET_FRAMEWORK: 4.8
+  secrets-manager:
+    DB_PASSWORD: "appeals-db-credentials-2:password"
+    DB_USER: "appeals-db-credentials-2:username"
+    DB_HOST: "appeals-db-credentials-2:host"
+phases:  
+  build:
+    commands:    
+      - nuget restore
+      - dir
+      - cd ${env:PROJECT}
+      - dir
+      - (Get-Content Web.config).replace('RDS_SERVER', ${DB_HOST}) | Set-Content Web.config
+      - (Get-Content Web.config).replace('RDS_DATABASE_NAME', 'ossc') | Set-Content Web.config
+      - (Get-Content Web.config).replace('RDS_USER_ID', ${DB_USER}) | Set-Content Web.config
+      - (Get-Content Web.config).replace('RDS_USER_PASSWORD', ${DB_PASSWORD}) | Set-Content Web.config
+      - cat Web.config
+      - cd ..
+      - msbuild $env:PROJECT.vbproj /p:TargetFrameworkVersion=v$env:DOTNET_FRAMEWORK /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=C:\codebuild\artifacts\ /t:Package
+   
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\${env:PROJECT}_Package\Archive\'

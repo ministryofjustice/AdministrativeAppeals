@@ -20,11 +20,23 @@ Namespace Web
         Private Sub InitializeComponent()
         End Sub
 
+        Private Sub debug(ByVal msg as String)
+            Dim strFile As String = "C:\\Windows\\Temp\\mgb.log"
+            Dim fileExists As Boolean = File.Exists(strFile)
+            Using sw As New StreamWriter(File.Open(strFile, FileMode.Append))
+                sw.WriteLine(msg)
+            End Using
+        End Sub
+
         Private Sub ListJudgmentFiles()
             Dim str2 As String = ("j" & Me.decisionId.ToString)
             Dim path As String = Me.DirectoryPath((str2 & "/"))
+            debug(path)
+            'debug(Page.User.Identity.Name)
             If Directory.Exists(path) Then
+                debug("folder exists")
                 Dim files As FileInfo() = New DirectoryInfo(path).GetFiles
+                debug("number of files " + files.Length.ToString())
                 Dim i As Integer
                 For i = 0 To files.Length - 1
                     Dim child As New HyperLink With {
@@ -40,6 +52,9 @@ Namespace Web
                     Me.phLinks.Controls.Add(New LiteralControl("&nbsp;&nbsp;"))
                     Me.phLinks.Controls.Add(New LiteralControl("<br/>"))
                 Next i
+            Else
+                debug("folder doesn't exist")
+                File.GetAttributes(path)
             End If
         End Sub
 
