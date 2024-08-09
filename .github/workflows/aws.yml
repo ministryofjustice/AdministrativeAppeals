@@ -190,3 +190,93 @@ jobs:
       - name: Force ecs deployment
         run: |
           aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --force-new-deployment
+
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/master'
+    name: Prod - Build & Deploy
+    runs-on: windows-2019
+    permissions:
+      contents: write
+      issues: write
+      id-token: write
+    strategy:
+      matrix:
+        dotnet-version: ['5.0']
+    environment: production
+
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.ACCOUNT_ID }}:role/modernisation-platform-oidc-cicd
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get RDS Credential
+        id: get-credentials
+        uses: aws-actions/aws-secretsmanager-get-secrets@v1
+        with:
+          secret-ids: |
+            appeals-credentials-db-2
+            tribunals-db-prod_credentials
+          parse-json-secrets: true
+
+      - name: Check Credentials
+        id: check-credentials
+        run: |
+          if ( -not $env:APPEALS_CREDENTIALS_DB_2_HOST ) { 
+            echo "APPEALS_CREDENTIALS_DB_2_HOST is unset"
+          }
+          else {
+            echo "APPEALS_CREDENTIALS_DB_2_HOST is set to $env:APPEALS_CREDENTIALS_DB_2_HOST"
+            echo "APPEALS_CREDENTIALS_DB_2_DATABASE_NAME is set to $env:APPEALS_CREDENTIALS_DB_2_DATABASE_NAME"
+            echo "TRIBUNALS_DB_PROD_CREDENTIALS_USERNAME is set to $env:TRIBUNALS_DB_PROD_CREDENTIALS_USERNAME"
+            echo "TRIBUNALS_DB_PROD_CREDENTIALS_PASSWORD is set to $env:TRIBUNALS_DB_PROD_CREDENTIALS_PASSWORD"
+          }
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+        with:
+          mask-password: 'true'
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        run: |
+          # Build a docker container and push it to ECR so that it can be deployed to ECS
+          nuget restore
+          cd OSSCSC          
+          (Get-Content Web.config).replace('RDS_SERVER', $env:APPEALS_CREDENTIALS_DB_2_HOST) | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_DATABASE_NAME', $env:APPEALS_CREDENTIALS_DB_2_DATABASE_NAME) | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_ID', $env:TRIBUNALS_DB_PROD_CREDENTIALS_USERNAME) | Set-Content Web.config
+          (Get-Content Web.config).replace('RDS_USER_PASSWORD', $env:TRIBUNALS_DB_PROD_CREDENTIALS_PASSWORD) | Set-Content Web.config
+          #cat Web.config          
+          mkdir PublishedWebSite
+          msbuild $env:PROJECT.vbproj /p:TargetFrameworkVersion=v4.8 /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=PublishedWebSite
+          docker build -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest .
+          docker push ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest
+          echo "image=${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest" >> $Env:GITHUB_OUTPUT
+
+      - name: Force ecs deployment
+        run: |
+          aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --force-new-deployment
