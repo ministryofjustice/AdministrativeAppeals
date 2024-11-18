@@ -2,7 +2,7 @@ name: Deploy to Amazon ECS
 
 on:
   push:
-    branches: ["framework_upgrade", "staging", "master"]
+    branches: ["fix-do-post-back-error", "staging", "master"]
 
 env:
   PROJECT: OSSCSC
@@ -13,7 +13,7 @@ env:
 
 jobs:
   deploy-dev:
-    if: github.ref == 'refs/heads/framework_upgrade'
+    if: github.ref == 'refs/heads/fix-do-post-back-error'
     name: Dev - Build & Deploy
     runs-on: windows-2019
     permissions:

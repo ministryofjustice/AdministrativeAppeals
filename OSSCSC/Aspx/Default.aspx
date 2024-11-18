@@ -10,6 +10,21 @@
 <h3>This website includes decisions prior to January 2016. Details of newer cases can be found at the following: <a href="https://www.gov.uk/administrative-appeals-tribunal-decisions">https://www.gov.uk/administrative-appeals-tribunal-decisions</a></h3>
 
 <form id="Form1" method="post" runat="server">
+	<script type="text/javascript">
+		function __doPostBack(eventTarget, eventArgument) {
+			var theform = document.forms['Form1'];
+			if (!theform) {
+				theform = document.Form1;
+			}
+			if (!theform.onsubmit || (theform.onsubmit() != false)) {
+				theform.__EVENTTARGET.value = eventTarget;
+				theform.__EVENTARGUMENT.value = eventArgument;
+				theform.submit();
+			}
+		}
+	</script>
+	<input type="hidden" name="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" value="" />
 	<p><A href="default.aspx">Search Again</A>&nbsp;|&nbsp;<A href="default.aspx">Most 
 			Recent Decisions</A>
 	</p>
