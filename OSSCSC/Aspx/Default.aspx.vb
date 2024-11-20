@@ -37,7 +37,6 @@ Namespace Web
 
         Private Sub Page_Init(ByVal sender As Object, ByVal e As EventArgs)
             Me.InitializeComponent()
-            AddHandler btnSearch.Click, AddressOf btnSearch_Click
         End Sub
 
         Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
@@ -50,53 +49,30 @@ Namespace Web
                 Utility.PopulateCategory(Me.drpCategory)
                 Me.PagerControl.PageIndex = 1
             End If
-            
-            If Me.IsPostBack AndAlso Me.Request.UrlReferrer IsNot Nothing Then
+            If Me.IsPostBack Then
                 If (Me.Request.UrlReferrer.AbsolutePath.IndexOf("view.aspx") <> -1) Then
                     Utility.PopulateCategory(Me.drpCategory)
-                    If Not String.IsNullOrEmpty(Me.Request.QueryString("PagerControl_PageIndex")) Then
-                        Me.PagerControl.PageIndex = IntegerType.FromString(Me.Request.QueryString("PagerControl_PageIndex"))
-                    End If
-                    If Not String.IsNullOrEmpty(Me.Request.QueryString("drpCategory")) Then
-                        Dim categoryItem = Me.drpCategory.Items.FindByValue(Me.Request.QueryString("drpCategory"))
-                        If categoryItem IsNot Nothing Then
-                            categoryItem.Selected = True
-                        End If
+                    Me.PagerControl.PageIndex = IntegerType.FromString(Me.Request.QueryString("PagerControl_PageIndex"))
+                    If (StringType.StrCmp(Me.Request.QueryString("drpCategory"), "", False) <> 0) Then
+                        Me.drpCategory.Items.FindByValue(Me.Request.QueryString("drpCategory")).Selected = True
                     End If
                 End If
-
-                If Me.drpCategory.SelectedItem IsNot Nothing AndAlso (DoubleType.FromString(Me.drpCategory.SelectedItem.Value) <> -1) Then
+                If (DoubleType.FromString(Me.drpCategory.SelectedItem.Value) <> -1) Then
                     Utility.PopulateSubCategory(Me.drpSubcategory, IntegerType.FromString(Me.drpCategory.SelectedItem.Value))
-                    If Not String.IsNullOrEmpty(Me.Request("drpSubcategory")) Then
-                        Dim subCategoryItem = Me.drpSubcategory.Items.FindByValue(Me.Request("drpSubcategory").ToString)
-                        If subCategoryItem IsNot Nothing Then
-                            subCategoryItem.Selected = True
-                        End If
+                    If Not Me.Request("drpSubcategory").Equals(String.Empty) Then
+                        Me.drpSubcategory.Items.FindByValue(Me.Request("drpSubcategory").ToString).Selected = True
                     End If
                 End If
-
-                If Not String.IsNullOrEmpty(Me.Request("drpCommissioner")) Then
-                    Dim commissionerItem = Me.drpCommissioner.Items.FindByValue(Me.Request("drpCommissioner").ToString)
-                    If commissionerItem IsNot Nothing Then
-                        commissionerItem.Selected = True
-                    End If
+                If Not Me.Request("drpCommissioner").Equals(String.Empty) Then
+                    Me.drpCommissioner.Items.FindByValue(Me.Request("drpCommissioner").ToString).Selected = True
                 End If
-
-                If Not String.IsNullOrEmpty(Me.Request("drpNCNYear")) Then
-                    Dim ncnYearItem = Me.drpNCNYear.Items.FindByValue(Me.Request("drpNCNYear").ToString)
-                    If ncnYearItem IsNot Nothing Then
-                        ncnYearItem.Selected = True
-                    End If
+                If Not Me.Request("drpNCNYear").Equals(String.Empty) Then
+                    Me.drpNCNYear.Items.FindByValue(Me.Request("drpNCNYear").ToString).Selected = True
                 End If
-
-                If Not String.IsNullOrEmpty(Me.Request("drpNCNCitation")) Then
-                    Dim ncnCitationItem = Me.drpNCNCitation.Items.FindByValue(Me.Request("drpNCNCitation").ToString)
-                    If ncnCitationItem IsNot Nothing Then
-                        ncnCitationItem.Selected = True
-                    End If
+                If Not Me.Request("drpNCNCitation").Equals(String.Empty) Then
+                    Me.drpNCNCitation.Items.FindByValue(Me.Request("drpNCNCitation").ToString).Selected = True
                 End If
             End If
-
             Me.drpCategory.Attributes.Add("onchange", "populate(this, 'Form1', 'drpSubcategory', this.selectedIndex);")
             Me.btnSearch.Attributes.Add("onclick", "document.forms[0].action = ""default.aspx""")
         End Sub
