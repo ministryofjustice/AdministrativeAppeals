@@ -1,62 +1,37 @@
 <%@ Page Language="VB" AutoEventWireup="true" %>
-
-<%@ Import Namespace="System.Security.Cryptography" %>
-
-<%@ Import Namespace="System.Threading" %>
-
- 
+<%@ Import Namespace="OSSCSC.Business" %>
 
 <script runat="server">
-
-    Sub Page_Load()
-
-        Dim delay As Byte() = New Byte(0) {}
-
-        Dim prng As RandomNumberGenerator = New RNGCryptoServiceProvider()
-
-    
-
-        prng.GetBytes(delay)
-
-        Thread.Sleep(CType(delay(0), Integer))
-
-    
-
-        Dim disposable As IDisposable = TryCast(prng, IDisposable)
-
-        If Not disposable Is Nothing Then
-
-            disposable.Dispose()
-
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim lastError As Exception = Server.GetLastError()
+        If lastError IsNot Nothing Then
+            ErrorLogger.LogError(lastError, "Page: " & Request.Url.ToString())
+            Server.ClearError()
         End If
-
     End Sub
-
 </script>
 
- 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
- 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head runat="server">
-
-    <title></title>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #f5f5f5; }
+        .error-box { max-width: 600px; margin: 0 auto; padding: 20px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #d9534f; margin-top: 0; }
+        .contact { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+    </style>
 </head>
-
 <body>
-
-    <div>
-
-        An error occurred while processing your request.
-
+    <div class="error-box">
+        <h1>An Error Occurred</h1>
+        <p>We apologize, but an error occurred while processing your request. Our technical team has been notified and will investigate the issue.</p>
+        <div class="contact">
+            <p>If you need immediate assistance, please contact our support team:</p>
+            <p>Email: <%= ConfigurationSettings.AppSettings("DCA.TribunalsService.Ossc.Web.SupportEmail") %></p>
+        </div>
+        <p><a href="/">Return to Home Page</a></p>
     </div>
-
 </body>
-
 </html>
 
