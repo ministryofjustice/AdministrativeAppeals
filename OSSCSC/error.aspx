@@ -26,6 +26,7 @@
         Dim errorMsg As String = String.Format("{0}: {1} - {2}", DateTime.Now, ex.Message, additionalInfo)
         Console.WriteLine("ERROR: " & errorMsg)
     End Sub
+    
 </script>
 
 <!DOCTYPE html>
