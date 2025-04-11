@@ -13,7 +13,7 @@ env:
 
 jobs:
   deploy-dev:
-    if: github.ref == 'refs/heads/RST-7278-verbose-error-messages'
+    if: github.ref == 'refs/heads/RST-7278-verbose-logging'
     name: Dev - Build & Deploy
     runs-on: windows-2019
     permissions:
