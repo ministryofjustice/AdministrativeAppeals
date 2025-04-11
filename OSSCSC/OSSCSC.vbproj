@@ -90,6 +90,9 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+  <PackageReference Include="AWS.Logger.NLog" Version="1.1.3" />
+</ItemGroup>
+  <ItemGroup>
     <Content Include="AboutUs\aboutTheCommissioners.htm" />
     <Content Include="AboutUs\aboutUs.htm" />
     <Content Include="AboutUs\administrativeStaff.htm" />
