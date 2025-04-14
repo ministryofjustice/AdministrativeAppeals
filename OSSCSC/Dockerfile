@@ -8,6 +8,6 @@ WORKDIR /inetpub/wwwroot
 # Create a C:\Log directory for logging purposes
 RUN powershell -Command New-Item -Path C:\Log -ItemType Directory -Force
 # Set permissions for IIS_IUSRS to have full access to C:\Log
-RUN powershell -Command icacls "C:\Log" /grant "IIS_IUSRS:(OI)(CI)F" /T
+RUN powershell -Command "icacls 'C:\Log' /grant 'IIS_IUSRS:(OI)(CI)F' /T"
 
 COPY ${source:-PublishedWebSite/_PublishedWebsites/OSSCSC} .
