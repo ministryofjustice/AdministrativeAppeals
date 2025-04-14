@@ -444,7 +444,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NLog.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Copy if newer</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="loggingconfiguration.config" />
     <Content Include="loggingdistributorconfiguration.config" />
     <!-- <Content Include=".vs\osscsc\v16\TestStore\0\000.testlog" /> -->
