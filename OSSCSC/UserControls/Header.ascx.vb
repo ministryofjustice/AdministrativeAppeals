@@ -22,6 +22,8 @@ Namespace Web
         End Sub
 
         Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
+            Console.WriteLine("Header component loaded at: " & DateTime.Now.ToString())
+            Debug.WriteLine("Header component loaded at: " & DateTime.Now.ToString())
         End Sub
 
 
