@@ -10,7 +10,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
         Try
             Dim lastError As Exception = Server.GetLastError()
-            ' Log the error to console (stdout) so it can be picked up by ECS or Kubernetes logs
+            Logger.Info(lastError, "An unhandled exception occurred on the error page.")
             Logger.Error(lastError, "An unhandled exception occurred on the error page.")
             If lastError IsNot Nothing Then
                 LogErrorToConsole(lastError)
