@@ -26,7 +26,7 @@ Namespace Web
         End Sub
 
         Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
-        Logger.Info("Header component loaded at: " & DateTime.Now.ToString())
+        Logger.Info("Header component loaded at: ")
         End Sub
 
 
