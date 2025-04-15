@@ -11,28 +11,16 @@
         Try
             Dim lastError As Exception = Server.GetLastError()
             Logger.Info("the error page.")
-            Logger.Error(lastError)
-            Logger.Error($"An unhandled exception occurred: {lastError}")
-            Logger.Debug($"Exception type: {lastError?.GetType().FullName}")
-            Logger.Debug($"Exception message: {lastError?.Message}")
-            Logger.Debug($"Exception stack trace: {lastError?.StackTrace}") 
             If lastError IsNot Nothing Then
                Logger.Error(lastError, "1 An unhandled exception occurred on the error page.")
-               Logger.Error($"2An unhandled exception occurred: {lastError}")
-
+               Logger.Error(lastError.Message, "2 An unhandled exception occurred on the error page.")
                 Server.ClearError()
             End If
-            Logger.Error(lastError, "Outside error if block")
-            Logger.Debug($"Exception stack trace: {lastError?.StackTrace}") 
+            Logger.Error("Outside error block")
             Server.ClearError() 
         Catch
             ' Ignore logging errors
         End Try
-    End Sub
-
-    Private Sub LogErrorToConsole(ByVal ex As Exception, Optional ByVal additionalInfo As String = "")
-        Dim errorMsg As String = String.Format("{0}: {1} - {2}", DateTime.Now, ex.Message, additionalInfo)
-        Console.WriteLine("ERROR: " & errorMsg)
     End Sub
     
 </script>
