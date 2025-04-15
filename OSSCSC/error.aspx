@@ -9,17 +9,27 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
         Try
-            Dim lastError As Exception = Server.GetLastError()
-            Logger.Info("the error page.")
+            Logger.Info("Entered the error page.")
+        Dim lastError As Exception = Server.GetLastError()
+        
+        If lastError IsNot Nothing Then
+            Logger.Error(lastError, "Error from Server.GetLastError()")
+            Server.ClearError()
+        Else
+            ' If Server.GetLastError() is null, try to get error from Session
+            lastError = TryCast(Session("LastError"), Exception)
+            
             If lastError IsNot Nothing Then
-               Logger.Error(lastError, "1 An unhandled exception occurred on the error page.")
-               Logger.Error(lastError.Message, "2 An unhandled exception occurred on the error page.")
-                Server.ClearError()
+                Logger.Error(lastError, "Error retrieved from session")
+                
+                ' Clear the error from session
+                Session("LastError") = Nothing
+            Else
+                Logger.Warn("No error found to log.")
             End If
-            Logger.Error("Outside error block")
-            Server.ClearError() 
-        Catch
-            ' Ignore logging errors
+        End If
+    Catch ex As Exception
+        Logger.Error(ex, "Error while logging an error")
         End Try
     End Sub
     

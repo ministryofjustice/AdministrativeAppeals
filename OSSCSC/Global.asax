@@ -1,26 +1,13 @@
 <%@ Application Language="VB" %>
 <%@ Import Namespace="NLog" %>
 <%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Web.SessionState" %>
 
 <script runat="server">
     Private ReadOnly Logger As Logger = LogManager.GetCurrentClassLogger()
     
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
         Try
-            ' Create logs directory if it doesn't exist
-            Dim logsPath As String = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs")
-            If Not Directory.Exists(logsPath) Then
-                Directory.CreateDirectory(logsPath)
-                Logger.Info("Created logs directory at: {0}", logsPath)
-            End If
-
-            ' Create archive directory if it doesn't exist
-            Dim archivePath As String = Path.Combine(logsPath, "archive")
-            If Not Directory.Exists(archivePath) Then
-                Directory.CreateDirectory(archivePath)
-                Logger.Info("Created archive directory at: {0}", archivePath)
-            End If
-
             Logger.Info("Application started")
         Catch ex As Exception
             Logger.Error(ex, "Error during application startup: {0}", ex.Message)
@@ -29,8 +16,14 @@
     End Sub
     
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
-        Dim ex = Server.GetLastError()
-        Logger.Error(ex, "An unhandled exception occurred")
+        Dim ex As Exception = Server.GetLastError()
+        Logger.Error(ex, "1 An unhandled exception occurred on the error page.")
+        
+        If ex IsNot Nothing Then
+            ' Store in session for retrieval on error page
+            Session("LastError") = ex
+            Logger.Error(ex, "Error caught in Application_Error")
+        End If
     End Sub
     
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
