@@ -10,12 +10,20 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
         Try
             Dim lastError As Exception = Server.GetLastError()
-            Logger.Info(lastError, "An unhandled exception occurred on the error page.")
-            Logger.Error(lastError, "An unhandled exception occurred on the error page.")
+            Logger.Info("the error page.")
+            Logger.Error(lastError)
+            Logger.Error($"An unhandled exception occurred: {lastError}")
+            Logger.Debug($"Exception type: {lastError?.GetType().FullName}")
+            Logger.Debug($"Exception message: {lastError?.Message}")
+            Logger.Debug($"Exception stack trace: {lastError?.StackTrace}") 
             If lastError IsNot Nothing Then
-                LogErrorToConsole(lastError)
+               Logger.Error(lastError, "1 An unhandled exception occurred on the error page.")
+               Logger.Error($"2An unhandled exception occurred: {lastError}")
+
                 Server.ClearError()
             End If
+            Logger.Error(lastError, "Outside error if block")
+            Logger.Debug($"Exception stack trace: {lastError?.StackTrace}") 
             Server.ClearError() 
         Catch
             ' Ignore logging errors
