@@ -86,8 +86,6 @@ Namespace Web
         End Sub
 
         Private Function PopulateGrid() As Object
-                logger.Info("Executing search with criteria: CategoryID={0}, SubCategoryID={1}",
-                           criteria.CategoryID, criteria.SubCategoryID)
             Dim obj2 As Object
             Dim criteria As SearchCriteria = Me.PopulateSearchCriteria
             If (StringType.StrCmp(Me.DecisionGrid.SortDirection, Nothing, False) = 0) Then
@@ -97,6 +95,7 @@ Namespace Web
             Dim ds As DataSet = New Decision().SearchPaged(criteria, PagerControl.PageIndex, PagerControl.PageSize, Me.PagerControl.ResultCount)
             Me.DecisionGrid.DataSource = ds
             Me.DecisionGrid.DataBind()
+            logger.Info("Executing search with criteria: CategoryID={0}, SubCategoryID={1}", criteria.CategoryID, criteria.SubCategoryID)
             Return obj2
         End Function
 
