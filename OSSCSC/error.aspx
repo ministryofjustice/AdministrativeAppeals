@@ -2,25 +2,13 @@
 <%@ Import Namespace="System.Configuration" %>
 <%@ Import Namespace="System.Web" %>
 <%@ Import Namespace="System.Diagnostics" %>
+<%@ Import Namespace="NLog" %>
 
 <script runat="server">
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
-        Try
-            Dim lastError As Exception = Server.GetLastError()
-            ' Log the error to console (stdout) so it can be picked up by ECS or Kubernetes logs
-            If lastError IsNot Nothing Then
-                LogErrorToConsole(lastError)
-                Server.ClearError()
-            End If
-            Server.ClearError() 
-        Catch
-            ' Ignore logging errors
-        End Try
-    End Sub
+    Private Shared ReadOnly Logger As Logger = LogManager.GetCurrentClassLogger()
 
-    Private Sub LogErrorToConsole(ByVal ex As Exception, Optional ByVal additionalInfo As String = "")
-        Dim errorMsg As String = String.Format("{0}: {1} - {2}", DateTime.Now, ex.Message, additionalInfo)
-        Console.WriteLine("ERROR: " & errorMsg)
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
+            Logger.Info("User redirected to the error page. See the previous logs for details.")
     End Sub
 </script>
 
