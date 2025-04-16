@@ -8,6 +8,7 @@ Namespace Web
         Inherits MasterPagePublic
         Private Shared ReadOnly logger As Logger = LogManager.GetCurrentClassLogger()
         
+
         ' Methods
         Public Sub New()
             AddHandler MyBase.Load, New EventHandler(AddressOf Me.Page_Load)
@@ -43,51 +44,41 @@ Namespace Web
         End Sub
 
         Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
-            Try
-                logger.Info("Starting page load for search page")
-                Me.PagerControl.PageSize = Configuration.GetInt("DCA.TribunalsService.Ossc.Web.Search.Grid.PageSize")
-                Me.Page.RegisterClientScriptBlock("dropdowns", Me.ClientSideScript)
-                Utility.PopulateCommissioners(Me.drpCommissioner, 0)
-                Me.PopulateNCNYearAndNCNCitation()
+            Me.PagerControl.PageSize = Configuration.GetInt("DCA.TribunalsService.Ossc.Web.Search.Grid.PageSize")
+            Me.Page.RegisterClientScriptBlock("dropdowns", Me.ClientSideScript)
+            Utility.PopulateCommissioners(Me.drpCommissioner, 0)
+            Me.PopulateNCNYearAndNCNCitation()
 
-                If Not Me.IsPostBack Then
+            If Not Me.IsPostBack Then
+                Utility.PopulateCategory(Me.drpCategory)
+                Me.PagerControl.PageIndex = 1
+            End If
+            If Me.IsPostBack Then
+                If (Me.Request.UrlReferrer.AbsolutePath.IndexOf("view.aspx") <> -1) Then
                     Utility.PopulateCategory(Me.drpCategory)
-                    Me.PagerControl.PageIndex = 1
-                End If
-                
-                If Me.IsPostBack Then
-                    logger.Debug("Handling postback data")
-                    If (Me.Request.UrlReferrer.AbsolutePath.IndexOf("view.aspx") <> -1) Then
-                        logger.Debug("Returning from view page, restoring search state")
-                        Utility.PopulateCategory(Me.drpCategory)
-                        Me.PagerControl.PageIndex = IntegerType.FromString(Me.Request.QueryString("PagerControl_PageIndex"))
-                        If (StringType.StrCmp(Me.Request.QueryString("drpCategory"), "", False) <> 0) Then
-                            Me.drpCategory.Items.FindByValue(Me.Request.QueryString("drpCategory")).Selected = True
-                        End If
-                    End If
-                    If (DoubleType.FromString(Me.drpCategory.SelectedItem.Value) <> -1) Then
-                        Utility.PopulateSubCategory(Me.drpSubcategory, IntegerType.FromString(Me.drpCategory.SelectedItem.Value))
-                        If Not Me.Request("drpSubcategory").Equals(String.Empty) Then
-                            Me.drpSubcategory.Items.FindByValue(Me.Request("drpSubcategory").ToString).Selected = True
-                        End If
-                    End If
-                    If Not Me.Request("drpCommissioner").Equals(String.Empty) Then
-                        Me.drpCommissioner.Items.FindByValue(Me.Request("drpCommissioner").ToString).Selected = True
-                    End If
-                    If Not Me.Request("drpNCNYear").Equals(String.Empty) Then
-                        Me.drpNCNYear.Items.FindByValue(Me.Request("drpNCNYear").ToString).Selected = True
-                    End If
-                    If Not Me.Request("drpNCNCitation").Equals(String.Empty) Then
-                        Me.drpNCNCitation.Items.FindByValue(Me.Request("drpNCNCitation").ToString).Selected = True
+                    Me.PagerControl.PageIndex = IntegerType.FromString(Me.Request.QueryString("PagerControl_PageIndex"))
+                    If (StringType.StrCmp(Me.Request.QueryString("drpCategory"), "", False) <> 0) Then
+                        Me.drpCategory.Items.FindByValue(Me.Request.QueryString("drpCategory")).Selected = True
                     End If
                 End If
-                
-                Me.drpCategory.Attributes.Add("onchange", "populate(this, 'Form1', 'drpSubcategory', this.selectedIndex);")
-                Me.btnSearch.Attributes.Add("onclick", "document.forms[0].action = ""default.aspx""")
-            Catch ex As Exception
-                logger.Error(ex, "Error during page load: {0}", ex.Message)
-                Throw
-            End Try
+                If (DoubleType.FromString(Me.drpCategory.SelectedItem.Value) <> -1) Then
+                    Utility.PopulateSubCategory(Me.drpSubcategory, IntegerType.FromString(Me.drpCategory.SelectedItem.Value))
+                    If Not Me.Request("drpSubcategory").Equals(String.Empty) Then
+                        Me.drpSubcategory.Items.FindByValue(Me.Request("drpSubcategory").ToString).Selected = True
+                    End If
+                End If
+                If Not Me.Request("drpCommissioner").Equals(String.Empty) Then
+                    Me.drpCommissioner.Items.FindByValue(Me.Request("drpCommissioner").ToString).Selected = True
+                End If
+                If Not Me.Request("drpNCNYear").Equals(String.Empty) Then
+                    Me.drpNCNYear.Items.FindByValue(Me.Request("drpNCNYear").ToString).Selected = True
+                End If
+                If Not Me.Request("drpNCNCitation").Equals(String.Empty) Then
+                    Me.drpNCNCitation.Items.FindByValue(Me.Request("drpNCNCitation").ToString).Selected = True
+                End If
+            End If
+            Me.drpCategory.Attributes.Add("onchange", "populate(this, 'Form1', 'drpSubcategory', this.selectedIndex);")
+            Me.btnSearch.Attributes.Add("onclick", "document.forms[0].action = ""default.aspx""")
         End Sub
 
         Private Sub Page_PreRender(ByVal sender As Object, ByVal e As EventArgs)
@@ -95,31 +86,18 @@ Namespace Web
         End Sub
 
         Private Function PopulateGrid() As Object
-            Try
-                logger.Debug("Starting to populate grid")
-                Dim criteria As SearchCriteria = Me.PopulateSearchCriteria
-                
-                If (StringType.StrCmp(Me.DecisionGrid.SortDirection, Nothing, False) = 0) Then
-                    logger.Debug("Setting default sort to decision_datetime DESC")
-                    Me.DecisionGrid.SortColumn = "decision_datetime"
-                    Me.DecisionGrid.SortDirection = "DESC"
-                End If
-                
-                logger.Debug("Executing search with criteria: CategoryID={0}, SubCategoryID={1}", 
+                logger.Info("Executing search with criteria: CategoryID={0}, SubCategoryID={1}",
                            criteria.CategoryID, criteria.SubCategoryID)
-                
-                Dim ds As DataSet = New Decision().SearchPaged(criteria, PagerControl.PageIndex, PagerControl.PageSize, Me.PagerControl.ResultCount)
-                logger.Debug("Search returned {0} results", ds.Tables(0).Rows.Count)
-                
-                Me.DecisionGrid.DataSource = ds
-                Me.DecisionGrid.DataBind()
-                logger.Debug("Grid population completed")
-                
-                Return Nothing
-            Catch ex As Exception
-                logger.Error(ex, "Error populating grid: {0}", ex.Message)
-                Throw
-            End Try
+            Dim obj2 As Object
+            Dim criteria As SearchCriteria = Me.PopulateSearchCriteria
+            If (StringType.StrCmp(Me.DecisionGrid.SortDirection, Nothing, False) = 0) Then
+                Me.DecisionGrid.SortColumn = "decision_datetime"
+                Me.DecisionGrid.SortDirection = "DESC"
+            End If
+            Dim ds As DataSet = New Decision().SearchPaged(criteria, PagerControl.PageIndex, PagerControl.PageSize, Me.PagerControl.ResultCount)
+            Me.DecisionGrid.DataSource = ds
+            Me.DecisionGrid.DataBind()
+            Return obj2
         End Function
 
         Private Sub PopulateNCNYearAndNCNCitation()
@@ -167,10 +145,5 @@ Namespace Web
                 .NCNYear = IntegerType.FromString(Me.drpNCNYear.SelectedItem.Value)
             }
         End Function
-
-        Protected Overrides Sub OnUnload(e As EventArgs)
-            MyBase.OnUnload(e)
-            LogManager.Flush()
-        End Sub
     End Class
 End Namespace
