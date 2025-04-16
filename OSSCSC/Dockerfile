@@ -4,4 +4,8 @@
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
 WORKDIR /inetpub/wwwroot
+
+# Create a C:\Log directory for logging purposes
+RUN powershell -Command New-Item -Path C:\Log -ItemType Directory -Force
+
 COPY ${source:-PublishedWebSite/_PublishedWebsites/OSSCSC} .

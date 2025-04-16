@@ -1,10 +1,14 @@
 Imports Microsoft.VisualBasic.CompilerServices
 Imports OSSCSC.Business.Business
 Imports OSSCSC.Entity.Entity
+Imports NLog
 
 Namespace Web
     Public Class Search
         Inherits MasterPagePublic
+        Private Shared ReadOnly logger As Logger = LogManager.GetCurrentClassLogger()
+        
+
         ' Methods
         Public Sub New()
             AddHandler MyBase.Load, New EventHandler(AddressOf Me.Page_Load)
@@ -91,6 +95,7 @@ Namespace Web
             Dim ds As DataSet = New Decision().SearchPaged(criteria, PagerControl.PageIndex, PagerControl.PageSize, Me.PagerControl.ResultCount)
             Me.DecisionGrid.DataSource = ds
             Me.DecisionGrid.DataBind()
+            logger.Info("Executing search with criteria: CategoryID={0}, SubCategoryID={1}", criteria.CategoryID, criteria.SubCategoryID)
             Return obj2
         End Function
 
