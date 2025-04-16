@@ -2,7 +2,10 @@ name: Deploy to Amazon ECS
 
 on:
   push:
-    branches: ["RST-7278-verbose-logging", "staging", "master"]
+    branches:
+      - "RST-*"
+      - "staging"
+      - "master"
 
 env:
   PROJECT: OSSCSC
@@ -13,7 +16,7 @@ env:
 
 jobs:
   deploy-dev:
-    if: github.ref == 'refs/heads/RST-7278-verbose-logging'
+    if: startsWith(github.ref, 'refs/heads/RST-')
     name: Dev - Build & Deploy
     runs-on: windows-2019
     permissions:
