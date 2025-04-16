@@ -21,7 +21,6 @@
         If ex IsNot Nothing Then
             Logger.Error(ex, "An unhandled exception occurred on the error page: ")
         End If
-        Server.ClearError()
     End Sub
     
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)

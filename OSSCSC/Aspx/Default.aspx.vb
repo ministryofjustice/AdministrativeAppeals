@@ -109,7 +109,7 @@ Namespace Web
                            criteria.CategoryID, criteria.SubCategoryID)
                 
                 Dim ds As DataSet = New Decision().SearchPaged(criteria, PagerControl.PageIndex, PagerControl.PageSize, Me.PagerControl.ResultCount)
-                logger.Info("Search returned {0} results", ds.Tables(0).Rows.Count)
+                logger.Debug("Search returned {0} results", ds.Tables(0).Rows.Count)
                 
                 Me.DecisionGrid.DataSource = ds
                 Me.DecisionGrid.DataBind()
