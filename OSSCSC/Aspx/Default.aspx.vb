@@ -16,7 +16,6 @@ Namespace Web
         End Sub
 
         Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs)
-            logger.Debug("Search button clicked, resetting page index to 1")
             Me.PagerControl.PageIndex = 1
         End Sub
 
@@ -52,7 +51,6 @@ Namespace Web
                 Me.PopulateNCNYearAndNCNCitation()
 
                 If Not Me.IsPostBack Then
-                    logger.Debug("Initial page load - populating category dropdown")
                     Utility.PopulateCategory(Me.drpCategory)
                     Me.PagerControl.PageIndex = 1
                 End If
@@ -86,7 +84,6 @@ Namespace Web
                 
                 Me.drpCategory.Attributes.Add("onchange", "populate(this, 'Form1', 'drpSubcategory', this.selectedIndex);")
                 Me.btnSearch.Attributes.Add("onclick", "document.forms[0].action = ""default.aspx""")
-                logger.Info("Page load completed successfully")
             Catch ex As Exception
                 logger.Error(ex, "Error during page load: {0}", ex.Message)
                 Throw

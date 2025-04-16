@@ -8,31 +8,8 @@
     Private Shared ReadOnly Logger As Logger = LogManager.GetCurrentClassLogger()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
-        Try
-            Logger.Info("Entered the error page.")
-        Dim lastError As Exception = Server.GetLastError()
-        
-        If lastError IsNot Nothing Then
-            Logger.Error(lastError, "Error from Server.GetLastError()")
-            Server.ClearError()
-        Else
-            ' If Server.GetLastError() is null, try to get error from Session
-            lastError = TryCast(Session("LastError"), Exception)
-            
-            If lastError IsNot Nothing Then
-                Logger.Error(lastError, "Error retrieved from session")
-                
-                ' Clear the error from session
-                Session("LastError") = Nothing
-            Else
-                Logger.Warn("No error found to log.")
-            End If
-        End If
-    Catch ex As Exception
-        Logger.Error(ex, "Error while logging an error")
-        End Try
+            Logger.Info("User redirected to the error page. See the previous logs for details.")
     End Sub
-    
 </script>
 
 <!DOCTYPE html>

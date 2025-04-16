@@ -2,14 +2,10 @@
 Imports System
 Imports System.Diagnostics
 Imports System.Web.UI
-Imports NLog
 
 Namespace Web
     Public Class Header
         Inherits UserControl
-
-        Private Shared ReadOnly Logger As Logger = LogManager.GetCurrentClassLogger()
-    
         ' Methods
         Public Sub New()
             AddHandler MyBase.Load, New EventHandler(AddressOf Me.Page_Load)
@@ -26,7 +22,6 @@ Namespace Web
         End Sub
 
         Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
-        Logger.Info("Header component loaded at: ")
         End Sub
 
 

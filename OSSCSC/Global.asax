@@ -8,7 +8,7 @@
     
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
         Try
-            Logger.Info("Application started")
+            Logger.Info("//////////////// Application started \\\\\\\\\\\\\\\\")
         Catch ex As Exception
             Logger.Error(ex, "Error during application startup: {0}", ex.Message)
             Throw
@@ -17,13 +17,11 @@
     
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
         Dim ex As Exception = Server.GetLastError()
-        Logger.Error(ex, "1 An unhandled exception occurred on the error page.")
         
         If ex IsNot Nothing Then
-            ' Store in session for retrieval on error page
-            Session("LastError") = ex
-            Logger.Error(ex, "Error caught in Application_Error")
+            Logger.Error(ex, "An unhandled exception occurred on the error page: ")
         End If
+        Server.ClearError()
     End Sub
     
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
