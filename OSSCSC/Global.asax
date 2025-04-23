@@ -24,6 +24,5 @@
     End Sub
     
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
-        Logger.Info("Session started")
     End Sub
 </script>
