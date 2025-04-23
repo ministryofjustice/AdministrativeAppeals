@@ -8,7 +8,7 @@
     
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
         Try
-            Logger.Info("//////////////// Application started \\\\\\\\\\\\\\\\")
+            Logger.Info("******** Application started ********")
         Catch ex As Exception
             Logger.Error(ex, "Error during application startup: {0}", ex.Message)
             Throw
@@ -24,6 +24,5 @@
     End Sub
     
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
-        Logger.Info("Session started")
     End Sub
 </script>
