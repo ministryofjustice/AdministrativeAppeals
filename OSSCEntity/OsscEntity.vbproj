@@ -84,7 +84,7 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <Reference include="System.Configuration">
+    <Reference Include="System.Configuration">
       <Name>System.Configuration</Name>
     </Reference>
   </ItemGroup>
