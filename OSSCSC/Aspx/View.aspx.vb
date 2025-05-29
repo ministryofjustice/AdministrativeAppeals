@@ -12,7 +12,7 @@ Namespace Web
         End Sub
 
         Private Function DirectoryPath(ByVal judgmentFolder As String) As String
-            Dim str3 As String = ConfigurationSettings.AppSettings("DCA.TribunalsService.Ossc.Web.DecisionUploadFolder")
+            Dim str3 As String = ConfigurationManager.AppSettings("DCA.TribunalsService.Ossc.Web.DecisionUploadFolder")
             Return (Me.Server.MapPath("~") & str3 & judgmentFolder)
         End Function
 
