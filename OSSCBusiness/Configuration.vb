@@ -9,7 +9,7 @@ Namespace Business
         '/ <param name="key"></param>
         '/ <returns></returns>
         Public Shared Function GetInt(ByVal key As String) As Integer
-            Return Utility.ParseInt(ConfigurationSettings.AppSettings(key))
+            Return Utility.ParseInt(ConfigurationManager.AppSettings(key))
         End Function
 
 
@@ -19,7 +19,7 @@ Namespace Business
         '/ <param name="key"></param>
         '/ <returns></returns>
         Public Shared Function GetString(ByVal key As String) As String
-            Return ConfigurationSettings.AppSettings(key)
+            Return ConfigurationManager.AppSettings(key)
         End Function
     End Class
 
