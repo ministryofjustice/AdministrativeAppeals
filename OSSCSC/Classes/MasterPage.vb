@@ -64,7 +64,7 @@ Namespace Web
         End Sub
 
         Private Function StylesheetHref(ByVal stylesheet As String) As String
-            Return (ConfigurationSettings.AppSettings("DCA.TribunalsService.Ossc.Web.Stylesheet.Href") & stylesheet)
+            Return (ConfigurationManager.AppSettings("DCA.TribunalsService.Ossc.Web.Stylesheet.Href") & stylesheet)
         End Function
 
 

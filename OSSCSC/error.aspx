@@ -29,7 +29,7 @@
         <p>We apologize, but an error occurred while processing your request. Our technical team has been notified and will investigate the issue.</p>
         <div class="contact">
             <p>If you need immediate assistance, please contact our support team:</p>
-            <p>Email: <%= ConfigurationSettings.AppSettings("DCA.TribunalsService.Ossc.Web.SupportEmail") %></p>
+            <p>Email: <%= ConfigurationManager.AppSettings("DCA.TribunalsService.Ossc.Web.SupportEmail") %></p>
         </div>
         <p><a href="/">Return to Home Page</a></p>
     </div>

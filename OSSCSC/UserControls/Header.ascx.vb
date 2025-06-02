@@ -10,7 +10,7 @@ Namespace Web
         Public Sub New()
             AddHandler MyBase.Load, New EventHandler(AddressOf Me.Page_Load)
             AddHandler MyBase.Init, New EventHandler(AddressOf Me.Page_Init)
-            Me.baseURL = ConfigurationSettings.AppSettings("DCA.TribunalsService.Ossc.Web.BaseURL")
+            Me.baseURL = ConfigurationManager.AppSettings("DCA.TribunalsService.Ossc.Web.BaseURL")
         End Sub
 
         <DebuggerStepThrough>
