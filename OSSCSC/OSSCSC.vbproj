@@ -310,7 +310,6 @@
     <Content Include="Publications\tribunalReform.htm" />
     <Content Include="Publications\userGroup.htm" />
     <Content Include="Publications\videoConferencing.htm" />
-    <Content Include="robots.txt" />
     <Content Include="RulesLegislation\keyChanges.htm" />
     <Content Include="RulesLegislation\practiceMemoranda.htm" />
     <Content Include="RulesLegislation\regulations.htm" />
