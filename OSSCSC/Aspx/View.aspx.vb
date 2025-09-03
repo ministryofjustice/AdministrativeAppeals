@@ -31,12 +31,8 @@ Namespace Web
         Private Sub ListJudgmentFiles()
             Dim str2 As String = ("j" & Me.decisionId.ToString)
             Dim path As String = Me.DirectoryPath((str2 & "/"))
-            debug(path)
-            'debug(Page.User.Identity.Name)
             If Directory.Exists(path) Then
-                debug("folder exists")
                 Dim files As FileInfo() = New DirectoryInfo(path).GetFiles
-                debug("number of files " + files.Length.ToString())
                 Dim i As Integer
                 For i = 0 To files.Length - 1
                     Dim child As New HyperLink With {
@@ -52,9 +48,6 @@ Namespace Web
                     Me.phLinks.Controls.Add(New LiteralControl("&nbsp;&nbsp;"))
                     Me.phLinks.Controls.Add(New LiteralControl("<br/>"))
                 Next i
-            Else
-                debug("folder doesn't exist")
-                File.GetAttributes(path)
             End If
         End Sub
 
